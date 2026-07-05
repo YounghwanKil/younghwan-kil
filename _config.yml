@@ -1,0 +1,41 @@
+title: Younghwan Kil (길영환)
+description: >-
+  Personal knowledge wiki of Younghwan Kil — ML researcher in Trustworthy AI
+  (generative-model safety & uncertainty-aware clinical AI). A Karpathy-style,
+  ever-growing knowledge base about who I am, what I've built, and why.
+author: Younghwan Kil
+lang: en
+
+# --- GitHub Pages / theme ---
+remote_theme: just-the-docs/just-the-docs
+url: "https://younghwankil.github.io"
+baseurl: "/younghwan-kil"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+# --- just-the-docs options ---
+color_scheme: light
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+heading_anchors: true
+
+aux_links:
+  "GitHub":
+    - "https://github.com/YounghwanKil"
+aux_links_new_tab: true
+
+footer_content: >-
+  Younghwan Kil · yhgil99@snu.ac.kr · Maintained as a living wiki.
+
+# Pretty URLs (/wiki/profile/ instead of /wiki/profile.html)
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
