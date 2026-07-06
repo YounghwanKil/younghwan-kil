@@ -72,7 +72,7 @@ erosion introduced by reasoning* — auditing 6 open-source LLMs.
 On the **reliability** side, I build clinical models that are honest about uncertainty. I
 have used **evidential deep learning** (Dirichlet epistemic/aleatoric decomposition),
 **split conformal prediction** (distribution-free coverage with temperature-scaling
-calibration), **MC-Dropout**, and **attention over sparse clinical time series** (DBTAN,
+calibration), **MC-Dropout**, and **attention over sparse clinical time series** (DATAN,
 HealthAI 2026) — each designed so the model can say "I'm not sure" and defer rather than
 guess.
 

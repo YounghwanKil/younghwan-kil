@@ -43,7 +43,7 @@ permalink: /wiki/publications/
 
 ## Conference presentations — international (HealthAI 2026, Prague)
 
-6. **DBTAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction
+6. **DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction
    Under Sparse Clinical Observations.** HealthAI 2026 — poster (accepted). *Y. Kil\*,
    S. K. Kim\*, S. Kim, Y. Kim, S. Yang, G. Manalu.* — co-first author.
    → [project]({{ '/wiki/projects/datan/' \| relative_url }})
@@ -65,5 +65,5 @@ permalink: /wiki/publications/
 
 - **Generative-model / diffusion safety:** 1 (ASCG), 2 (EBSG, NeurIPS 2026), 4 (negation)
 - **LLM safety auditing:** 3 (cross-lingual), 5 (reasoning erosion)
-- **Uncertainty-aware clinical AI:** 6 (DBTAN), 7 (T2D), 8 (set-based temporal)
+- **Uncertainty-aware clinical AI:** 6 (DATAN), 7 (T2D), 8 (set-based temporal)
 - **Industrial-engineering / OR roots:** 9 (queuing), 10 (sequential agents)

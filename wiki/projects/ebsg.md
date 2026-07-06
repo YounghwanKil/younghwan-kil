@@ -43,7 +43,7 @@ robust to bypass.
   - **7 I2P harmful-concept slices**,
   - **4 MJA metaphor categories**.
 - Supports **multi-concept removal**.
-- **Transfers to a modern backbone (SD3).**
+- **Transfers to modern backbones (SD3, FLUX.1).**
 
 ## Relationship to ASCG
 EBSG is the flagship successor in the same research line as
@@ -60,8 +60,8 @@ steerable sub-concepts — a more granular, user-controllable, and transferable 
   evaluate it honestly.
 - **Action:** Designed EBSG — exemplar-pack spatial guidance decomposing broad concepts
   into localized sub-concepts; built a VLM-based fine-grained evaluation protocol;
-  validated across nudity / I2P / MJA benchmarks and transferred to SD3.
-- **Result:** SOTA erasure across 15 benchmark slices, multi-concept support, SD3 transfer;
+  validated across nudity / I2P / MJA benchmarks and transferred to SD3 and FLUX.1.
+- **Result:** SOTA erasure across 15 benchmark slices, multi-concept support, SD3 & FLUX.1 transfer;
   submitted to **NeurIPS 2026** (first author, with Jinwoo Shin & Juho Lee).
 - **Says about me:** I push a research line from workshop (ASCG) to a top-venue submission
   (NeurIPS), and I insist that *evaluation* be as rigorous as the method.

@@ -29,7 +29,7 @@ Making powerful generators refuse harm *without* breaking benign use.
 ### 2. Uncertainty-aware clinical AI
 Medical models that quantify confidence and defer when unsure.
 
-- **Attention over sparse clinical time series (DBTAN → HealthAI 2026; Set-Based Temporal
+- **Attention over sparse clinical time series (DATAN → HealthAI 2026; Set-Based Temporal
   Attention → KIIE).** ICU mortality prediction under missing/irregular observations, and
   reliable Type-2-diabetes detection (HealthAI 2026).
 - **Uncertainty methods.** Evidential deep learning (Dirichlet, epistemic vs aleatoric),
