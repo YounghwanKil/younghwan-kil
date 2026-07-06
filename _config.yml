@@ -6,13 +6,12 @@ description: >-
 author: Younghwan Kil
 lang: en
 
-# --- GitHub Pages / theme ---
-remote_theme: just-the-docs/just-the-docs
+# --- theme (installed as a gem; see Gemfile) ---
+theme: just-the-docs
 url: "https://younghwankil.github.io"
 baseurl: "/younghwan-kil"
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-seo-tag
 
 # --- just-the-docs options ---

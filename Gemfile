@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-# GitHub Pages build environment. `github-pages` pins the exact gem versions
-# GitHub uses server-side, so local previews match the deployed site.
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-remote-theme"
+# Self-contained Jekyll build (GitHub Actions). just-the-docs is installed as a
+# gem and used via `theme:` so the build has no network dependency on a remote theme.
+gem "jekyll", "~> 4.3"
+gem "just-the-docs", "~> 0.10"
 gem "jekyll-seo-tag"
 
-# Windows / WSL friendliness
+# Windows / WSL friendliness for local `jekyll serve`
 gem "webrick", "~> 1.8"
