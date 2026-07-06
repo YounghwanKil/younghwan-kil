@@ -12,10 +12,24 @@ permalink: /wiki/education/
 
 ### Korea Advanced Institute of Science and Technology (KAIST)
 **M.S., Kim Jaechul Graduate School of AI** · 2025 – present
-Trustworthy AI research group. Research Assistant on 6 national R&D projects funded by
-IITP / NRF, spanning trustworthy AI, meta-learning for real-world problems, core AI
-algorithms, and biomedical data analysis — contributing to model development, experiments,
-and paper writing.
+Trustworthy AI research group (advisor: Juho Lee, SIML — Statistical Inference and Machine
+Learning). Research Assistant on 6 national R&D projects (IITP / NRF), contributing to
+model development, experiments, and paper writing.
+
+**National R&D projects (participating researcher):**
+
+| Project | Funder / grant no. |
+|---------|--------------------|
+| AI Trustworthiness (인공지능 신뢰성) | NRF, Convergence Research Center (CRC) · RS-2022-NR070855 |
+| Ethics-Adaptive AI / **AI-DEP** (윤리 정책 적응형 AI) — fairness | IITP · RS-2022-II220184 |
+| AI Core Algorithms Research (인공지능 핵심 알고리즘 연구) | IITP, Computing Core Technology · RS-2024-00509279 |
+| Meta-Learning for Real-World Problems (실세계 문제 적용 메타학습) | IITP · RS-2022-II220713 |
+| Multimodal Data for Anxiety Disorder Analysis (불안장애 분석) | NRF, Brain Disease Recovery · RS-2021-NR056917 |
+| AI Graduate School Program, KAIST (인공지능대학원지원) | IITP · RS-2019-II190075 |
+
+*AI-DEP is part of IITP's "사람중심 인공지능 핵심원천기술개발" program (2022.04–2026.12); its
+broadcast track builds a Korean broadcast-script fairness/safety benchmark with an LLM-based
+detection-and-revision method.*
 
 ### Seoul National University (SNU)
 **B.S., Industrial Engineering (primary) & Computer Science (double major)** · 2018 – 2025
