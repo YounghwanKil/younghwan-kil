@@ -32,7 +32,7 @@ about what you value:
 3. **Honesty about uncertainty.** Evidential DL, conformal prediction, MC-Dropout — you
    repeatedly build models that admit what they don't know. In medicine especially, a
    model that defers is safer than a confident wrong one.
-4. **Rigor and follow-through.** *Summa Cum Laude*, 13 papers, tens of thousands of
+4. **Rigor and follow-through.** *Summa Cum Laude*, 10 papers, tens of thousands of
    evaluated samples. You finish things and you verify them.
 5. **Giving knowledge back.** Four semesters tutoring physics; a wiki like this one.
    You care about making hard things understandable.

@@ -26,7 +26,7 @@ knowing about who I am, what I have built, and why — so that CVs, cover letter
 - **[👤 Profile]({{ '/wiki/profile/' | relative_url }})** — who I am, in depth.
 - **[🧭 Values & Motivation]({{ '/wiki/values/' | relative_url }})** — why Trustworthy AI, career direction (자소서 core material).
 - **[🗂️ Projects]({{ '/wiki/projects/' | relative_url }})** — research projects, each as its own page.
-- **[📄 Publications]({{ '/wiki/publications/' | relative_url }})** — 13 papers (accepted / under review).
+- **[📄 Publications]({{ '/wiki/publications/' | relative_url }})** — 10 papers (accepted / under review).
 
 ## At a glance
 
