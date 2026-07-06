@@ -95,7 +95,7 @@ These are the recurring "who I am" threads to draw on when writing 자소서 / s
   rigorous method to a messy real problem. *Evidence:* IE + CS double major feeding an AI
   research career; clinical +
   generative-safety portfolio.
-- **High-volume, rigorous execution.** A large, evidence-backed body of work (10 papers,
+- **High-volume, rigorous execution.** A large, evidence-backed body of work (7 international papers,
   60k+ evaluated generations, multi-backbone/multi-LLM validation) produced alongside
   coursework and teaching. *Evidence:* publication list; *Summa Cum Laude*; 4 semesters of
   physics tutoring.

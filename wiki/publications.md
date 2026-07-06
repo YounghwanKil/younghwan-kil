@@ -9,7 +9,8 @@ permalink: /wiki/publications/
 # Publications
 {: .no_toc }
 
-10 papers. `†` = corresponding author · `*` = equal contribution.
+7 international papers (3 accepted · 4 under review) + 3 domestic conference talks.
+`†` = corresponding author · `*` = equal contribution. Most papers are first-authored.
 
 - TOC
 {:toc}
@@ -43,14 +44,14 @@ permalink: /wiki/publications/
    Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI —
    **major revision**. *Y. Kil, S. Chae†.* → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
 
-## Domestic (KIIE, KCI)
+## Domestic conference presentations (KIIE)
 
 8. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
-   Informatics Framework.** KIIE (KCI), 2025. *Y. Kil, N. Kil†.*
+   Informatics Framework.** KIIE conference presentation, 2025. *Y. Kil, N. Kil†.*
 9. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
-   (KCI), 2024. *Y. Kil, S. Chae†.*
-10. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE (KCI), 2024.
-    *Y. Kil, S. Chae†.*
+   conference presentation, 2024. *Y. Kil, S. Chae†.*
+10. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE conference
+    presentation, 2024. *Y. Kil, S. Chae†.*
 
 ---
 

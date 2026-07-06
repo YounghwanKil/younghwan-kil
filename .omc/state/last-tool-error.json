@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"export GIT_DISCOVERY_ACROSS_FILESYSTEM=1\\nRUN=$(/usr/bin/gh run list --repo YounghwanKil/younghwan-kil --limit 1 --json databaseId --jq '.[0].databaseId' 2>/dev/null)\\necho \\\"run=$RUN\\\"\\n/...",
+  "error": "Exit code 1\nrun=28766588107",
+  "timestamp": "2026-07-06T03:53:18.436Z",
+  "retry_count": 1
+}
