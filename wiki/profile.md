@@ -24,7 +24,7 @@ permalink: /wiki/profile/
 | **Location** | Yangjae, Seoul, South Korea |
 | **Contact** | yhgil99@snu.ac.kr (academic) · yhgil99@naver.com (personal) |
 | **Links** | [github.com/YounghwanKil](https://github.com/YounghwanKil) |
-| **Education** | KAIST M.S. (AI, 2025–) · SNU B.S. Industrial Engineering (2018–2025, *Summa Cum Laude*) |
+| **Education** | KAIST M.S. (AI, 2025–) · SNU B.S. Industrial Engineering & Computer Science — double major (2018–2025, *Summa Cum Laude*) |
 
 ## One-line
 
@@ -39,8 +39,10 @@ School of AI, working on Trustworthy AI. His research spans two complementary ha
 "AI you can trust": **generative-model safety** — making text-to-image diffusion models
 and open-source LLMs refuse harmful outputs without breaking benign behaviour — and
 **uncertainty-aware clinical AI** — building medical models that quantify their own
-confidence so they can defer when unsure. He came to AI from **industrial engineering at
-Seoul National University**, where he graduated *Summa Cum Laude* (GPA 4.00/4.30), and
+confidence so they can defer when unsure. He came to AI from a **double major in
+Industrial Engineering and Computer Science at Seoul National University** — pairing a
+systems/optimization foundation with a full CS core — where he graduated *Summa Cum
+Laude* (GPA 4.00/4.30), and
 now works across diffusion models, LLM alignment auditing, evidential/conformal
 uncertainty, and graph neural networks. His work appears at the CVPR Workshop on Safe and
 Trustworthy Foundation Models and HealthAI 2026, with a further body of clinical-AI and
@@ -88,9 +90,10 @@ These are the recurring "who I am" threads to draw on when writing 자소서 / s
   asks "will this hold up in the real world?" — safety that doesn't break benign use,
   predictions that come with coverage guarantees. *Evidence:* ASCG's selective guidance;
   conformal + evidential clinical models.
-- **Bridge-builder across fields.** Industrial engineering → AI; safety ↔ healthcare;
-  theory ↔ deployment. I'm comfortable being the person who connects a rigorous method to
-  a messy real problem. *Evidence:* IE degree feeding an AI research career; clinical +
+- **Bridge-builder across fields.** Industrial engineering + computer science → AI;
+  safety ↔ healthcare; theory ↔ deployment. I'm comfortable being the person who connects a
+  rigorous method to a messy real problem. *Evidence:* IE + CS double major feeding an AI
+  research career; clinical +
   generative-safety portfolio.
 - **High-volume, rigorous execution.** A large, evidence-backed body of work (10 papers,
   60k+ evaluated generations, multi-backbone/multi-LLM validation) produced alongside

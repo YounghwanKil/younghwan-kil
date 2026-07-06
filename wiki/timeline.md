@@ -14,7 +14,7 @@ Chronological path with context for *why each step mattered* — useful for the
 
 | Period | What | Context |
 |--------|------|---------|
-| **2018** | Enter **Seoul National University**, B.S. Industrial Engineering | Systems-reliability foundation: optimization, statistics, stochastic systems. |
+| **2018** | Enter **Seoul National University**, B.S. Industrial Engineering (+ **Computer Science double major**) | Systems-reliability foundation (optimization, statistics, stochastic systems) paired with a full CS core. |
 | **2020-08 – 2022-02** | **Mandatory military service**, ROK Army (Goseong, Gangwon-do) | 18-month tour; returned to studies with the AI pivot ahead. |
 | **2022-09 – 2022-12** | **Medical AI Intern**, AIRS Medical (에어스메디컬) | First hands-on deep learning for medical imaging — 3 internal tasks. Seeded the clinical-AI direction. |
 | **2023-12 – 2025-02** | **Undergraduate Research Intern**, KAIRI Program, KAIST AI | 14-month research internship (Winter-2023 KAIRI cohort, 1st-choice admit) run concurrently with the final 3 SNU semesters. Bridge into serious research. |

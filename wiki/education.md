@@ -18,7 +18,9 @@ algorithms, and biomedical data analysis — contributing to model development, 
 and paper writing.
 
 ### Seoul National University (SNU)
-**B.S., Industrial Engineering** · 2018 – 2025
+**B.S., Industrial Engineering (primary) & Computer Science (double major)** · 2018 – 2025
+- **Double major** (복수전공): Industrial Engineering + Computer Science & Engineering — a
+  systems/optimization foundation combined with a full CS core.
 - **Summa Cum Laude** (최우등 졸업).
 - **Cumulative GPA 4.00 / 4.30.**
 - **성적우수 (merit) scholarship — 5 times:** 2020-I, 2020-I, 2020-II, 2022-II, 2023-II.

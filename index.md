@@ -33,6 +33,6 @@ knowing about who I am, what I have built, and why — so that CVs, cover letter
 | | |
 |---|---|
 | **Now** | M.S. student & graduate researcher, KAIST Kim Jaechul Graduate School of AI (2025–) |
-| **Before** | B.S. Industrial Engineering, Seoul National University — *Summa Cum Laude*, GPA 4.00/4.30 |
+| **Before** | B.S. Industrial Engineering **& Computer Science (double major)**, Seoul National University — *Summa Cum Laude*, GPA 4.00/4.30 |
 | **Focus** | Generative-model safety (diffusion, LLMs), uncertainty quantification, medical/dental AI |
 | **Selected** | EBSG → NeurIPS 2026 (under review) · ASCG @ CVPR-W SAFE 2026 · 2× HealthAI 2026 (Prague) posters |
