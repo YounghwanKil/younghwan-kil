@@ -9,7 +9,7 @@ permalink: /wiki/publications/
 # Publications
 {: .no_toc }
 
-13 papers. `†` = corresponding author · `*` = equal contribution.
+10 papers. `†` = corresponding author · `*` = equal contribution.
 
 - TOC
 {:toc}
@@ -30,38 +30,33 @@ permalink: /wiki/publications/
 
 ## Under review
 
-4. **PerioEDL: Uncertainty-Aware Periodontitis Staging via Evidential Deep Learning.**
-   2026. *Y. Kil, N. Kil†.* → [project]({{ '/wiki/projects/perioedl/' \| relative_url }})
-5. **Graph Attention Networks for Tooth-Level Periodontal Status Prediction via
-   Inter-Tooth Spatial Dependency Modeling.** Euro Dentistry 2026. *Y. Kil, N. Kil†.*
-   → [project]({{ '/wiki/projects/oralgnn/' \| relative_url }})
-6. **Temperature-Scaled Convolutional Neural Networks with Split Conformal Prediction for
-   Reliable Dental Implant Type Classification from Panoramic Radiographs.** 2026.
-   *Y. Kil, N. Kil†.* → [project]({{ '/wiki/projects/implantxraycp/' \| relative_url }})
-7. **Attention-Based Multi-Instance Learning for Weakly-Supervised Identification of
-   Diagnostically Relevant Regions in Oral Squamous Cell Carcinoma Histopathology.** 2026.
-   *Y. Kil, N. Kil†.*
-8. **Cross-Lingual Safety Asymmetry in Open-Source LLMs.** SCIE Journal, Special Issue on
+4. **Example-Based Spatial Guidance for Training-Free Concept Erasure in Diffusion
+   Models (EBSG).** **NeurIPS 2026 Conference** — under review (Submission #35988).
+   *Y. Kil, J. Park, G. Nam, J. Shin, J. Lee.* → [project]({{ '/wiki/projects/ebsg/' \| relative_url }})
+5. **Cross-Lingual Safety Asymmetry in Open-Source LLMs.** SCIE Journal, Special Issue on
    Trustworthy and Safe AI — **minor revision**. *S. Chae, Y. Kil†.*
-9. **Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation.** SCIE
+   → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
+6. **Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation.** SCIE
    Journal, Special Issue on Trustworthy and Safe AI — **major revision**. *S. Chae, Y. Kil†.*
-10. **Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source
-    Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI —
-    **major revision**. *Y. Kil, S. Chae†.*
+   → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
+7. **Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source
+   Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI —
+   **major revision**. *Y. Kil, S. Chae†.* → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
 
 ## Domestic (KIIE, KCI)
 
-11. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
-    Informatics Framework.** KIIE (KCI), 2025. *Y. Kil, N. Kil†.*
-12. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
-    (KCI), 2024. *Y. Kil, S. Chae†.*
-13. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE (KCI), 2024.
+8. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
+   Informatics Framework.** KIIE (KCI), 2025. *Y. Kil, N. Kil†.*
+9. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
+   (KCI), 2024. *Y. Kil, S. Chae†.*
+10. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE (KCI), 2024.
     *Y. Kil, S. Chae†.*
 
 ---
 
 ## By theme
 
-- **Generative-model / LLM safety:** 1, 8, 9, 10
-- **Uncertainty-aware clinical AI:** 2, 3, 4, 5, 6, 7, 11
-- **Industrial-engineering / OR roots:** 12, 13
+- **Generative-model / diffusion safety:** 4 (EBSG, NeurIPS 2026), 1 (ASCG), 6 (negation)
+- **LLM safety auditing:** 5 (cross-lingual), 7 (reasoning erosion)
+- **Uncertainty-aware clinical AI:** 2 (DATAN), 3 (T2D), 8 (set-based temporal)
+- **Industrial-engineering / OR roots:** 9 (queuing), 10 (sequential agents)

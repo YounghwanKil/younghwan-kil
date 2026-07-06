@@ -3,7 +3,7 @@ title: LLM Safety Auditing
 layout: default
 parent: Projects
 grand_parent: Wiki
-nav_order: 6
+nav_order: 4
 permalink: /wiki/projects/llm-safety/
 ---
 

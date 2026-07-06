@@ -3,7 +3,7 @@ title: DATAN
 layout: default
 parent: Projects
 grand_parent: Wiki
-nav_order: 5
+nav_order: 3
 permalink: /wiki/projects/datan/
 ---
 

@@ -15,9 +15,7 @@ for interviews and 자소서.
 
 | Project | One line | Status |
 |---------|----------|--------|
+| [EBSG]({{ '/wiki/projects/ebsg/' \| relative_url }}) | Training-free exemplar-guided concept erasure for diffusion | **NeurIPS 2026** (under review) |
 | [ASCG]({{ '/wiki/projects/ascg/' \| relative_url }}) | Grad-CAM-gated safety guidance for diffusion | CVPR-W SAFE 2026 ✅ |
-| [PerioEDL]({{ '/wiki/projects/perioedl/' \| relative_url }}) | Evidential DL for periodontitis staging | Under review |
-| [OralGNN]({{ '/wiki/projects/oralgnn/' \| relative_url }}) | Graph attention on a 28-tooth dental graph | Under review |
-| [ImplantXrayCP]({{ '/wiki/projects/implantxraycp/' \| relative_url }}) | Conformal dental-implant classification | Under review |
 | [DATAN]({{ '/wiki/projects/datan/' \| relative_url }}) | Diffusion-augmented ICU mortality prediction | HealthAI 2026 ✅ |
-| [LLM Safety Auditing]({{ '/wiki/projects/llm-safety/' \| relative_url }}) | Cross-lingual asymmetry, reasoning erosion, negation | Under review |
+| [LLM Safety Auditing]({{ '/wiki/projects/llm-safety/' \| relative_url }}) | Cross-lingual asymmetry, reasoning erosion, negation | In revision (SCIE) |

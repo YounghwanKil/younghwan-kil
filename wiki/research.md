@@ -15,10 +15,13 @@ My research asks one question in two forms: **can we trust this model when it ac
 ### 1. Generative-model safety
 Making powerful generators refuse harm *without* breaking benign use.
 
-- **Diffusion safety (ASCG).** Grad-CAM localizes an emerging harmful concept during
-  sampling; classifier guidance fires *only* there, *only* when needed. SOTA harmful-concept
-  erasure across 4 diffusion backbones with minimal collateral damage; 60,000+ generations
-  evaluated with a VLM-based safety-vs-fidelity protocol beyond NudeNet.
+- **Diffusion safety — training-free concept erasure (EBSG → NeurIPS 2026, ASCG →
+  CVPR-W SAFE 2026).** Localized, *training-free* steering that suppresses unsafe concepts
+  while preserving benign semantics. EBSG uses editable exemplar packs to decompose broad
+  unsafe categories into steerable sub-concepts (SOTA across nudity / I2P / MJA benchmarks,
+  multi-concept, transfers to SD3); ASCG gates classifier guidance on Grad-CAM evidence
+  across 4 backbones. Both introduce a **VLM-based** safety-vs-fidelity protocol beyond
+  binary detectors.
 - **LLM safety auditing.** Cross-lingual safety asymmetry (safety holds in English but
   leaks elsewhere), reasoning-induced safety erosion, and why diffusion models
   misunderstand negation — auditing 6 open-source LLMs.
@@ -26,14 +29,12 @@ Making powerful generators refuse harm *without* breaking benign use.
 ### 2. Uncertainty-aware clinical AI
 Medical models that quantify confidence and defer when unsure.
 
-- **Evidential deep learning (PerioEDL)** — Dirichlet output decomposing epistemic vs
-  aleatoric uncertainty in one forward pass.
-- **Conformal prediction (ImplantXrayCP)** — distribution-free coverage guarantees via
-  split conformal + temperature scaling.
-- **Graph neural networks + MC-Dropout (OralGNN)** — tooth-level prediction on an
-  anatomically-structured dental graph.
-- **Attention over sparse clinical time series (DATAN, Set-based temporal attention)** —
-  ICU mortality and clinical events under missingness.
+- **Attention over sparse clinical time series (DATAN → HealthAI 2026; Set-Based Temporal
+  Attention → KIIE).** ICU mortality prediction under missing/irregular observations, and
+  reliable Type-2-diabetes detection (HealthAI 2026).
+- **Uncertainty methods.** Evidential deep learning (Dirichlet, epistemic vs aleatoric),
+  split conformal prediction (distribution-free coverage + temperature-scaling
+  calibration), and MC-Dropout — the toolkit for models that defer when unsure.
 
 ## The connective tissue
 

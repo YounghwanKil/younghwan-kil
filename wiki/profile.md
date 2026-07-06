@@ -53,20 +53,25 @@ are no longer "can the model do it?" but "**can we rely on it when it does?**" T
 conviction shows up in the two research directions I run in parallel.
 
 On the **safety** side, I work on stopping generative models from producing harm while
-keeping them fully useful for everyone else. My project **ASCG** (accepted to the CVPR
-Workshop on Safe and Trustworthy Foundation Models) uses Grad-CAM to *localize* an
-emerging harmful concept during diffusion sampling and applies classifier guidance only
-where and when it is needed — erasing unsafe content across four diffusion backbones with
-minimal collateral damage to benign prompts, evaluated over 60,000+ generations. In a
-parallel line on **LLM safety**, I audit open-source models for *cross-lingual safety
+keeping them fully useful for everyone else. My flagship project **EBSG** (Example-Based
+Spatial Guidance, under review at **NeurIPS 2026**, with Jinwoo Shin and Juho Lee) is a
+*training-free* method that uses editable exemplar packs to decompose a broad unsafe
+category into specific sub-concepts and steer against each with localized signals —
+reaching state-of-the-art erasure across nudity, I2P, and MJA benchmarks, supporting
+multi-concept removal, and transferring to a modern backbone (SD3). It grew out of
+**ASCG** (accepted to the CVPR Workshop on Safe and Trustworthy Foundation Models), which
+gates classifier guidance on Grad-CAM evidence across four diffusion backbones. Both
+introduce a **VLM-based** safety-vs-fidelity evaluation that goes beyond binary detectors.
+In a parallel line on **LLM safety**, I audit open-source models for *cross-lingual safety
 asymmetry* (safety that holds in English but leaks in other languages) and for *safety
 erosion introduced by reasoning* — auditing 6 open-source LLMs.
 
-On the **reliability** side, I build clinical models that are honest about uncertainty.
-Across dentistry and general medicine I have used **evidential deep learning**
-(PerioEDL), **split conformal prediction** (ImplantXrayCP), **MC-Dropout on graph neural
-networks** (OralGNN), and **attention over sparse clinical time series** (DATAN, HealthAI
-2026) — each designed so the model can say "I'm not sure" and defer rather than guess.
+On the **reliability** side, I build clinical models that are honest about uncertainty. I
+have used **evidential deep learning** (Dirichlet epistemic/aleatoric decomposition),
+**split conformal prediction** (distribution-free coverage with temperature-scaling
+calibration), **MC-Dropout**, and **attention over sparse clinical time series** (DATAN,
+HealthAI 2026) — each designed so the model can say "I'm not sure" and defer rather than
+guess.
 
 The thread connecting both halves is a preference for **methods with guarantees or
 mechanisms I can point to**: guidance that activates only on localized evidence,
