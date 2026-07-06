@@ -62,7 +62,8 @@ category into specific sub-concepts and steer against each with localized signal
 reaching state-of-the-art erasure across nudity, I2P, and MJA benchmarks, supporting
 multi-concept removal, and transferring to a modern backbone (SD3). It grew out of
 **ASCG** (accepted to the CVPR Workshop on Safe and Trustworthy Foundation Models), which
-gates classifier guidance on Grad-CAM evidence across four diffusion backbones. Both
+gates classifier guidance on Grad-CAM evidence (on Stable Diffusion 1.4, evaluated across
+three adversarial nudity benchmarks). Both
 introduce a **VLM-based** safety-vs-fidelity evaluation that goes beyond binary detectors.
 In a parallel line on **LLM safety**, I audit open-source models for *cross-lingual safety
 asymmetry* (safety that holds in English but leaks in other languages) and for *safety
@@ -71,7 +72,7 @@ erosion introduced by reasoning* — auditing 6 open-source LLMs.
 On the **reliability** side, I build clinical models that are honest about uncertainty. I
 have used **evidential deep learning** (Dirichlet epistemic/aleatoric decomposition),
 **split conformal prediction** (distribution-free coverage with temperature-scaling
-calibration), **MC-Dropout**, and **attention over sparse clinical time series** (DATAN,
+calibration), **MC-Dropout**, and **attention over sparse clinical time series** (DBTAN,
 HealthAI 2026) — each designed so the model can say "I'm not sure" and defer rather than
 guess.
 
@@ -95,10 +96,10 @@ These are the recurring "who I am" threads to draw on when writing 자소서 / s
   rigorous method to a messy real problem. *Evidence:* IE + CS double major feeding an AI
   research career; clinical +
   generative-safety portfolio.
-- **High-volume, rigorous execution.** A large, evidence-backed body of work (5 papers + 5 conference presentations,
-  60k+ evaluated generations, multi-backbone/multi-LLM validation) produced alongside
-  coursework and teaching. *Evidence:* publication list; *Summa Cum Laude*; 4 semesters of
-  physics tutoring.
+- **High-volume, rigorous execution.** A large, evidence-backed body of work (5 papers + 5
+  conference presentations spanning diffusion safety, LLM safety auditing, and clinical AI)
+  produced alongside coursework, teaching, and national R&D projects. *Evidence:*
+  publication list; *Summa Cum Laude*; 4 semesters of physics tutoring.
 - **Service & teaching.** Four semesters tutoring General Physics; scholarship-recognized
   academic record. I like making hard things legible to others.
 

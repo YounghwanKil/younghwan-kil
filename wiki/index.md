@@ -24,7 +24,7 @@ not a bullet dump.
 | [Timeline]({{ '/wiki/timeline/' \| relative_url }}) | Chronological career & study path with context for each step |
 | [Education & Honors]({{ '/wiki/education/' \| relative_url }}) | Degrees, GPA, scholarships, teaching |
 | [Research Overview]({{ '/wiki/research/' \| relative_url }}) | Research themes and how the projects connect |
-| [Projects]({{ '/wiki/projects/' \| relative_url }}) | One page per project (EBSG, ASCG, DATAN, LLM-Safety) |
+| [Projects]({{ '/wiki/projects/' \| relative_url }}) | One page per project (EBSG, ASCG, DBTAN, LLM-Safety) |
 | [Publications]({{ '/wiki/publications/' \| relative_url }}) | Full list — accepted & under review |
 | [Skills]({{ '/wiki/skills/' \| relative_url }}) | Languages, frameworks, infra, domains |
 

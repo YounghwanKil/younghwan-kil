@@ -31,5 +31,7 @@ Git · Linux · CUDA · Docker
 ## Applied methods (evidenced by projects)
 Classifier guidance · Grad-CAM concept localization · VLM-based safety evaluation ·
 evidential (Dirichlet) uncertainty · split conformal prediction · temperature scaling /
-calibration (ECE) · MC-Dropout · graph attention networks · multi-backbone / multi-LLM
-evaluation at scale (60,000+ generations, 6 open-source LLMs, 4 diffusion backbones).
+calibration (ECE) · MC-Dropout · graph attention networks · large-scale safety
+evaluation (ASCG on SD 1.4 across 3 adversarial benchmarks; EBSG across 4 nudity
+benchmarks / 7 I2P slices / 4 MJA categories with SD3 transfer; 6 open-source LLMs for
+cross-lingual & reasoning safety; VLM-based evaluation protocols).

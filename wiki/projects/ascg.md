@@ -12,7 +12,7 @@ permalink: /wiki/projects/ascg/
 
 > **Venue:** CVPR Workshop on Safe and Trustworthy Foundation Models (SAFE) 2026 — **accepted**.
 > **Authors:** Y. Kil, J. Park, G. Nam, J. Lee†.
-> **Stack:** Python · PyTorch · diffusers · Grad-CAM · Stable Diffusion 1.4/1.5 · SDXL-Turbo · SDXL-Lightning.
+> **Stack:** Python · PyTorch · diffusers · Grad-CAM · Stable Diffusion 1.4 · Qwen3-VL (evaluation).
 
 - TOC
 {:toc}
@@ -31,17 +31,20 @@ is the values-in-a-method idea: *precision over blanket censorship*. It also int
 **VLM-based safety-vs-fidelity evaluation** that goes beyond the NudeNet detector.
 
 ## Results
-- **SOTA harmful-concept (nudity) erasure across 4 diffusion backbones.**
+- Backbone: **Stable Diffusion 1.4**. **SOTA nudity erasure** across **three adversarial
+  benchmarks** — UnlearnDiff, Ring-A-Bell, and I2P.
 - **Minimal collateral damage** to benign prompts.
-- **60,000+ generations evaluated** (5,000 × 4 backbones × 3 conditions).
+- Introduces a **VLM (Qwen3-VL) evaluation protocol** with a Success Rate (Safe + Partial)
+  metric that separates *controlled suppression* from *safety-by-destruction* (image
+  collapse) — a distinction binary detectors like NudeNet miss.
 - Training-free — operates purely at inference.
 
 ## STAR seed (for 자소서 / interview)
 - **Situation:** Diffusion models generate harmful imagery; blunt erasure breaks normal use.
 - **Task:** Suppress harm *without* collateral damage, without retraining.
 - **Action:** Designed Grad-CAM-gated classifier guidance that activates only on localized
-  harmful evidence; built a VLM-based evaluation beyond NudeNet; validated over 60k+
-  generations across 4 backbones.
-- **Result:** SOTA erasure with minimal benign damage; accepted at CVPR-W SAFE 2026.
+  harmful evidence; built a VLM (Qwen3-VL) evaluation beyond NudeNet; validated on SD 1.4
+  across three adversarial benchmarks (UnlearnDiff, Ring-A-Bell, I2P).
+- **Result:** SOTA erasure with minimal benign damage; accepted at CVPR-W SAFE 2026 (first author).
 - **What it says about me:** I encode *"do no collateral harm"* directly into methods, and
   I validate at scale.

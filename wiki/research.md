@@ -20,8 +20,8 @@ Making powerful generators refuse harm *without* breaking benign use.
   while preserving benign semantics. EBSG uses editable exemplar packs to decompose broad
   unsafe categories into steerable sub-concepts (SOTA across nudity / I2P / MJA benchmarks,
   multi-concept, transfers to SD3); ASCG gates classifier guidance on Grad-CAM evidence
-  across 4 backbones. Both introduce a **VLM-based** safety-vs-fidelity protocol beyond
-  binary detectors.
+  on Stable Diffusion 1.4 (three adversarial nudity benchmarks). Both introduce a
+  **VLM-based** safety-vs-fidelity protocol beyond binary detectors.
 - **LLM safety auditing.** Cross-lingual safety asymmetry (safety holds in English but
   leaks elsewhere), reasoning-induced safety erosion, and why diffusion models
   misunderstand negation — auditing 6 open-source LLMs.
@@ -29,7 +29,7 @@ Making powerful generators refuse harm *without* breaking benign use.
 ### 2. Uncertainty-aware clinical AI
 Medical models that quantify confidence and defer when unsure.
 
-- **Attention over sparse clinical time series (DATAN → HealthAI 2026; Set-Based Temporal
+- **Attention over sparse clinical time series (DBTAN → HealthAI 2026; Set-Based Temporal
   Attention → KIIE).** ICU mortality prediction under missing/irregular observations, and
   reliable Type-2-diabetes detection (HealthAI 2026).
 - **Uncertainty methods.** Evidential deep learning (Dirichlet, epistemic vs aleatoric),

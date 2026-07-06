@@ -1,5 +1,5 @@
 ---
-title: DATAN
+title: DBTAN
 layout: default
 parent: Projects
 grand_parent: Wiki
@@ -7,7 +7,7 @@ nav_order: 3
 permalink: /wiki/projects/datan/
 ---
 
-# DATAN — Diffusion-Augmented Temporal Attention Network
+# DBTAN — Diffusion-Augmented Temporal Attention (ICU Mortality)
 {: .no_toc }
 
 > **Venue:** HealthAI 2026 (Prague) — Poster **accepted**.
