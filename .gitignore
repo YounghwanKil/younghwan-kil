@@ -6,3 +6,6 @@ vendor/
 .sass-cache/
 *.gem
 .DS_Store
+
+# OMC session state (local only)
+.omc/
