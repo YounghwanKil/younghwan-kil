@@ -19,7 +19,7 @@ Chronological path with context for *why each step mattered* — useful for the
 | **2022-09 – 2022-12** | **Medical AI Intern**, AIRS Medical (에어스메디컬) | First hands-on deep learning for medical imaging — 3 internal tasks. Seeded the clinical-AI direction. |
 | **2023-12 – 2025-02** | **Undergraduate Research Intern**, KAIRI Program, KAIST AI | 14-month research internship (Winter-2023 KAIRI cohort, 1st-choice admit) run concurrently with the final 3 SNU semesters. Bridge into serious research. |
 | **2024** | First **KIIE (KCI)** papers | Sequential-agent ordering; time-dependent queuing — industrial-engineering roots, published. |
-| **2025-02** | **Graduate SNU** — *Summa Cum Laude* (최우등), GPA 4.00/4.30 | 5× merit scholarships; 4 semesters tutoring physics. |
+| **2025-02** | **Graduate SNU** — *Summa Cum Laude* (최우등), GPA 4.00/4.30 | 4× merit scholarships; 4 semesters tutoring physics. |
 | **2025-03 – present** | **M.S. student & graduate researcher**, KAIST Kim Jaechul Graduate School of AI | Trustworthy-AI research group. Research Assistant on 6 IITP/NRF national R&D projects. |
 | **2025 (mid) – present** | Diffusion-safety line: **ASCG → EBSG** | ASCG accepted to CVPR Workshop on Safe & Trustworthy Foundation Models (SAFE) 2026; **EBSG** (training-free exemplar-guided erasure) submitted to **NeurIPS 2026**. |
 | **2025–2026** | Clinical-AI work (DATAN, T2D detection, set-based temporal attention) | Uncertainty-aware medical models; 2 posters accepted to HealthAI 2026 (Prague). |

@@ -37,7 +37,7 @@ detection-and-revision method.*
   systems/optimization foundation combined with a full CS core.
 - **Summa Cum Laude** (최우등 졸업).
 - **Cumulative GPA 4.00 / 4.30.**
-- **성적우수 (merit) scholarship — 5 times:** 2020-I, 2020-I, 2020-II, 2022-II, 2023-II.
+- **성적우수 (merit) scholarship — 4 times:** 2020-I, 2020-II, 2022-II, 2023-II.
 - **Peer tutor, General Physics I & II — 4 semesters:** 2023-I, 2023-II, 2024-I, 2024-II.
 
 ## Honors & recognition (summary)
@@ -46,7 +46,7 @@ detection-and-revision method.*
 |-------|--------|
 | Summa Cum Laude | Top graduation honor, SNU 2025 |
 | GPA 4.00 / 4.30 | Cumulative, across the B.S. |
-| Merit scholarship ×5 | 성적우수 장학금 |
+| Merit scholarship ×4 | 성적우수 장학금 |
 | Physics tutor ×4 semesters | General Physics I & II |
 | KAIRI intern (1st-choice admit) | Winter-2023 cohort, KAIST AI |
 
