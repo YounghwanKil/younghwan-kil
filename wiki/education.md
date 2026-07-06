@@ -21,7 +21,7 @@ model development, experiments, and paper writing.
 | Project | Funder / grant no. |
 |---------|--------------------|
 | AI Trustworthiness (인공지능 신뢰성) | NRF, Convergence Research Center (CRC) · RS-2022-NR070855 |
-| Ethics-Adaptive AI / **AI-DEP** (윤리 정책 적응형 AI) — fairness | IITP · RS-2022-II220184 |
+| **AI-DEP** — 점차 강화되고 있는 윤리 정책에 발맞춰 유연하게 진화하는 인공지능 기술 개발 연구 (Ethics-Adaptive AI, fairness) | IITP · RS-2022-II220184 |
 | AI Core Algorithms Research (인공지능 핵심 알고리즘 연구) | IITP, Computing Core Technology · RS-2024-00509279 |
 | Meta-Learning for Real-World Problems (실세계 문제 적용 메타학습) | IITP · RS-2022-II220713 |
 | Multimodal Data for Anxiety Disorder Analysis (불안장애 분석) | NRF, Brain Disease Recovery · RS-2021-NR056917 |
