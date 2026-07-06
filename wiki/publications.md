@@ -42,12 +42,12 @@ permalink: /wiki/publications/
    Diagnostically Relevant Regions in Oral Squamous Cell Carcinoma Histopathology.** 2026.
    *Y. Kil, N. Kil†.*
 8. **Cross-Lingual Safety Asymmetry in Open-Source LLMs.** SCIE Journal, Special Issue on
-   Trustworthy and Safe AI. *S. Chae, Y. Kil†.*
+   Trustworthy and Safe AI — **minor revision**. *S. Chae, Y. Kil†.*
 9. **Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation.** SCIE
-   Journal, Special Issue on Trustworthy and Safe AI. *S. Chae, Y. Kil†.*
+   Journal, Special Issue on Trustworthy and Safe AI — **major revision**. *S. Chae, Y. Kil†.*
 10. **Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source
-    Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI.
-    *Y. Kil, S. Chae†.*
+    Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI —
+    **major revision**. *Y. Kil, S. Chae†.*
 
 ## Domestic (KIIE, KCI)
 
