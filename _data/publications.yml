@@ -43,6 +43,7 @@
       url: /wiki/projects/ascg/
 
 - id: cross-lingual
+  project: llm-safety
   title: "Cross-lingual safety asymmetry in open-weight LLMs"
   status: accepted
   authors:
@@ -51,15 +52,18 @@
       self: true
       marker: "†"
   role: Corresponding author
-  venue: ETRI Journal
+  venue: ETRI Journal (SCIE)
   note: Early View · Published as Younghwan Gil
   links:
+    - label: PDF
+      url: https://onlinelibrary.wiley.com/doi/epdf/10.4218/etrij.2026-0180
     - label: DOI / Journal
       url: https://doi.org/10.4218/etrij.2026-0180
     - label: Project
       url: /wiki/projects/llm-safety/
 
 - id: forbidden-fruit
+  project: llm-safety
   title: "Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation"
   status: review
   authors:
@@ -73,14 +77,16 @@
       url: /wiki/projects/llm-safety/
 
 - id: reasoning-safety
+  project: llm-safety
   title: "Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source Reasoning Models"
   status: review
   authors:
     - name: Younghwan Kil
       self: true
-    - name: S. Chae
-      marker: "†"
-  role: First author
+      marker: "*"
+    - name: Sungwon Chae
+      marker: "*"
+  role: Co-first author
   links:
     - label: Project
       url: /wiki/projects/llm-safety/
@@ -94,3 +100,15 @@
     - name: Younghwan Kil
       self: true
     - name: Seunghyup Yoo
+
+- id: same-loss-validation
+  project: llm-safety
+  title: "Same-Loss Validation Is Tautological: A Loss-Independent Protocol for Testing Gradient Forecasts of Refusal Removal"
+  status: review
+  authors:
+    - name: Sungwon Chae
+      marker: "*"
+    - name: Younghwan Kil
+      self: true
+      marker: "*"
+  role: Co-first author

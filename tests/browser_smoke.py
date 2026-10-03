@@ -471,7 +471,7 @@ class BrowserSmokeTests(unittest.TestCase):
                     toggle.click()
                     nav.get_by_text('Publications', exact=True).click()
                     page.wait_for_url('**/wiki/publications/')
-                    self.assertEqual(page.locator('.publication-item').count(), 6)
+                    self.assertEqual(page.locator('.publication-item').count(), 7)
                     self.assertEqual(page.locator('[data-site-nav] a[aria-current="page"]').text_content().strip(), 'Publications')
                     page.locator('.archive-jump a[href="#under-review"]').click()
                     page.wait_for_function("""() => {
@@ -480,6 +480,12 @@ class BrowserSmokeTests(unittest.TestCase):
                         return heading.top >= header.bottom - 1 && heading.bottom < innerHeight;
                     }""")
                     evidence['anchor_heading_clear_of_sticky_header'] = 'PASS'
+                    page.goto(route_url(base_url, '/'), wait_until='networkidle')
+                    disclosure = page.locator('.conference-more')
+                    disclosure.locator('summary').click()
+                    self.assertTrue(disclosure.evaluate('(element) => element.open'))
+                    self.assertTrue(disclosure.get_by_text('International · HealthAI 2026 · Prague', exact=True).is_visible())
+                    evidence['conference_disclosure'] = 'PASS'
                     evidence['mobile_menu'] = 'PASS'
 
                     for route in NO_JS_ROUTES:

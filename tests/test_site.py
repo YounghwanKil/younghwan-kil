@@ -310,10 +310,10 @@ class SiteTests(unittest.TestCase):
                         self.assertIn(unquote(fragment), set(target_page.ids), f'{path}: missing fragment target {link}')
 
     def test_publication_statuses_and_counts(self):
-        self.assertEqual(self.publications.statuses, ['accepted'] * 3 + ['review'] * 3)
-        self.assertEqual(set(self.publications.papers), {'ebsg', 'ascg', 'cross-lingual', 'forbidden-fruit', 'reasoning-safety', 'placement'})
-        self.assertIn('6 papers', _normalized_text(self.publications.text))
-        for paper in ('forbidden-fruit', 'reasoning-safety', 'placement'):
+        self.assertEqual(self.publications.statuses, ['accepted'] * 3 + ['review'] * 4)
+        self.assertEqual(set(self.publications.papers), {'ebsg', 'ascg', 'cross-lingual', 'forbidden-fruit', 'reasoning-safety', 'placement', 'same-loss-validation'})
+        self.assertIn('7 papers', _normalized_text(self.publications.text))
+        for paper in ('forbidden-fruit', 'reasoning-safety', 'placement', 'same-loss-validation'):
             text = self.publications.paper_text(paper)
             self.assertIn('Under review', text)
             for stale in ('NeurIPS', 'AXIOM', 'ETRI', 'revision'):
@@ -378,6 +378,37 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn('Camera-ready', anchors[0]['text'])
             self.assertNotIn('PDF · Camera-ready', page.source)
 
+    def test_latest_authorship_and_journal_updates(self):
+        same_loss = self.publications.paper_text('same-loss-validation')
+        self.assertIn('Same-Loss Validation Is Tautological: A Loss-Independent Protocol for Testing Gradient Forecasts of Refusal Removal', same_loss)
+        self.assertLess(same_loss.index('Sungwon Chae*'), same_loss.index('Younghwan Kil*'))
+        reasoning = self.publications.paper_text('reasoning-safety')
+        self.assertIn('Younghwan Kil*', reasoning)
+        self.assertIn('Sungwon Chae*', reasoning)
+        self.assertNotIn('†', reasoning)
+        self.assertIn('ETRI Journal (SCIE)', self.publications.paper_text('cross-lingual'))
+
+    def test_project_summary_matches_updated_safety_record(self):
+        safety = _normalized_text(self.pages['/wiki/projects/llm-safety/'][1].text)
+        self.assertIn('4 papers', safety)
+        self.assertIn('3 under review', safety)
+        self.assertIn('Same-Loss Validation Is Tautological', safety)
+        self.assertIn('Sungwon Chae*', safety)
+        self.assertIn('Younghwan Kil*', safety)
+        self.assertIn('ETRI Journal (SCIE)', safety)
+
+    def test_home_overview_precedes_publications(self):
+        names = ['research-directions', 'work-experience', 'education-honors', 'home-publications']
+        positions = [self.home.ids.index(name) for name in names]
+        self.assertEqual(positions, sorted(positions))
+        self.assertIn('published-conference-posters', self.home.ids)
+        self.assertIn('<summary>More conference presentations', self.home.source)
+        self.assertNotIn('&lt;summary&gt;', self.home.source)
+        self.assertIn('HealthAI 2026', _normalized_text(self.home.text))
+        self.assertIn('KIIE', _normalized_text(self.home.text))
+        self.assertIn(BASE + '/assets/portrait.jpg', self.home.assets)
+        self.assertNotIn('Full publication archive', _normalized_text(self.home.text))
+
     def test_home_uses_same_accepted_publications(self):
         self.assertEqual(self.home.statuses, ['accepted'] * 3)
         for paper in ('ebsg', 'ascg', 'cross-lingual'):
@@ -404,10 +435,17 @@ class SiteTests(unittest.TestCase):
             'https://openreview.net/forum?id=kCWbL63oQy',
             'https://openreview.net/forum?id=S9HxdLOgqt',
             'https://doi.org/10.4218/etrij.2026-0180',
+            'https://onlinelibrary.wiley.com/doi/epdf/10.4218/etrij.2026-0180',
             BASE + '/assets/papers/ebsg-neurips-2026-camera-ready.pdf',
         ):
             self.assertIn(url, self.publications.links)
         self.assertNotIn('https://openreview.net/forum?id=7PYbqjhjCC', self.publications.links)
+
+    def test_selected_original_portrait_is_exact_verified_asset(self):
+        portrait = SITE / 'assets/portrait.jpg'
+        self.assertEqual(hashlib.sha256(portrait.read_bytes()).hexdigest(), 'c61791536a3eaded069ca242a86b842aae427a51f93e692f1d7d779ee9ef055c')
+        self.assertIn(BASE + '/assets/portrait.jpg', self.home.assets)
+        self.assertNotIn(BASE + '/assets/profile.jpg', self.home.assets)
 
     def test_camera_ready_is_exact_verified_file(self):
         pdf = SITE / 'assets/papers/ebsg-neurips-2026-camera-ready.pdf'
@@ -443,13 +481,14 @@ class SiteTests(unittest.TestCase):
                 self.assertIn(expected, text)
 
     def test_private_and_development_files_not_published(self):
-        for name in ('credentials', '.omx', '.omc', 'tests', 'scripts', 'DESIGN.md', 'README.md'):
+        for name in ('credentials', '.omx', '.omc', 'tests', 'scripts', 'DESIGN.md', 'README.md', 'assets/profile.jpg'):
             self.assertFalse((SITE / name).exists(), name)
 
     def test_no_stale_publication_copy_or_template_tokens(self):
         for route, (_path, page) in sorted(self.pages.items()):
             with self.subTest(route=route):
                 self.assertNotIn('5 international papers', page.source)
+                self.assertNotIn('6 papers/manuscripts', page.source)
                 self.assertNotIn('{{', page.source)
                 self.assertNotIn('{%', page.source)
 

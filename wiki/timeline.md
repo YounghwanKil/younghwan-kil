@@ -18,12 +18,12 @@ and interviews.
 | **2020-08 – 2022-02** | **Mandatory military service**, ROK Army (Goseong, Gangwon-do) | 18-month tour; returned to studies with the AI pivot ahead. |
 | **2022-09 – 2022-12** | **Medical AI Intern**, AIRS Medical | First hands-on deep learning for medical imaging — 3 internal tasks. Seeded the clinical-AI direction. |
 | **2023-12 – 2025-02** | **Undergraduate Research Intern**, KAIRI Program, KAIST AI | 14-month research internship (Winter-2023 KAIRI cohort, 1st-choice admit) run concurrently with the final 3 SNU semesters. Bridge into serious research. |
-| **2024** | First **KIIE (KCI)** papers | Sequential-agent ordering; time-dependent queuing — industrial-engineering roots, published. |
+| **2024** | First **KIIE** conference presentations | Sequential-agent ordering and time-dependent queuing — industrial-engineering foundations. |
 | **2025-02** | **Graduate SNU** — *Summa Cum Laude*, GPA 4.00/4.30 | 4× merit scholarships; 4 semesters tutoring physics. |
 | **2025-03 – present** | **M.S. student & graduate researcher**, KAIST Kim Jaechul Graduate School of AI | Trustworthy-AI research group. Research Assistant on 6 IITP/NRF national R&D projects. |
 | **2025 (mid) – present** | Diffusion-safety line: **ASCG → EBSG** | ASCG accepted to Workshop on Synthetic & Adversarial ForEnsics (SAFE@CVPR 2026); **EBSG** (training-free exemplar-guided erasure) accepted to **NeurIPS 2026**. |
 | **2025–2026** | Clinical-AI work (DATAN, T2D detection, set-based temporal attention) | Uncertainty-aware medical models; 2 posters accepted to HealthAI 2026 (Prague). |
-| **April 2026–Present** | **Haean Research Institute** | Current employment. |
+| **April 2026–Present** | **Haean Research Institute** | — |
 | **2026** | LLM-safety line (cross-lingual asymmetry, reasoning-induced erosion, negation) | Auditing 6 open-source LLMs; cross-lingual safety paper accepted at ETRI Journal; reasoning and negation papers under review. |
 
 ## The story in one breath

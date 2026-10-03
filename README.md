@@ -5,7 +5,7 @@ A personal academic homepage and research wiki, built with Jekyll and published 
 
 ## Structure
 
-- `index.md`: academic homepage and selected accepted publications.
+- `index.md`: overview-first homepage with research, experience, education, papers, and conference presentations.
 - `_data/publications.yml`: shared paper titles, authors, statuses, venues, and verified links.
 - `_includes/publication-list.html`: publication rendering used by the homepage and archive.
 - `_layouts/default.html`: responsive shared navigation and page layout.
@@ -38,9 +38,9 @@ python3 tests/browser_smoke.py
 ```
 
 The browser audit starts an isolated localhost preview automatically, checks every
-route at 320/390/768/1440px, and exercises keyboard navigation, tables, no-JavaScript
+route at 320/390/768/900/1440px, and exercises keyboard navigation, tables, no-JavaScript
 fallbacks, and reduced motion. Screenshots and JSON evidence are kept outside the
-published site under `.omx/artifacts/editorial-v2/`. `SITE_DIR`, `BASE_URL`, and
+published site under `.omx/artifacts/dark-english/`. `SITE_DIR`, `BASE_URL`, and
 `ARTIFACT_DIR` can select an explicit build, running preview, or evidence directory.
 When intentionally updating publication facts or replacing a verified PDF, update
 those corresponding assertions too. No frontend build or external webfont is required.

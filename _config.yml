@@ -44,3 +44,4 @@ exclude:
   - .omc
   - tests
   - scripts
+  - assets/profile.jpg

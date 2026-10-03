@@ -30,7 +30,7 @@ about what Younghwan Kil values:
 3. **Honesty about uncertainty.** Evidential DL, conformal prediction, and MC-Dropout all
    support models that admit what they do not know. In medicine especially, a model that
    defers is safer than a confident wrong one.
-4. **Rigor and follow-through.** *Summa Cum Laude*, 6 papers/manuscripts and 5 conference
+4. **Rigor and follow-through.** *Summa Cum Laude*, {{ site.data.publications.size }} papers/manuscripts and {{ site.data.conference_posters.size | plus: 5 }} conference
    presentations, tens of thousands of evaluated samples. The pattern is to finish work
    and verify it.
 5. **Giving knowledge back.** Four semesters tutoring physics; a wiki like this one.

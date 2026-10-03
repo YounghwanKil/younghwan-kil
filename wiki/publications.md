@@ -41,44 +41,12 @@ permalink: /wiki/publications/
 ### International · IOCDT 2026 · Online · 7–9 October 2026
 {% include conference-posters.html %}
 
-### International · HealthAI 2026 · Prague
-<ol class="conference-list" role="list">
-  <li>
-    <h3 class="conference-title">DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction Under Sparse Clinical Observations.</h3>
-    <p class="conference-authors"><strong>Younghwan Kil*</strong>, S. K. Kim*, S. Kim, Y. Kim, S. Yang, G. Manalu.</p>
-    <p class="conference-venue">HealthAI 2026 · Poster (accepted) · Co-first author.</p>
-    <a class="text-link" href="{{ '/wiki/projects/datan/' | relative_url }}">Project <span aria-hidden="true">↗</span></a>
-  </li>
-  <li>
-    <h3 class="conference-title">Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2 Diabetes Detection.</h3>
-    <p class="conference-authors"><strong>Younghwan Kil</strong>.</p>
-    <p class="conference-venue">HealthAI 2026 · Poster (accepted) · Sole author.</p>
-  </li>
-</ol>
-
-### Domestic · KIIE
-<ol class="conference-list" role="list">
-  <li>
-    <h3 class="conference-title">Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical Informatics Framework.</h3>
-    <p class="conference-authors"><strong>Younghwan Kil</strong>, N. Kil†.</p>
-    <p class="conference-venue">KIIE conference presentation · 2025.</p>
-  </li>
-  <li>
-    <h3 class="conference-title">Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.</h3>
-    <p class="conference-authors"><strong>Younghwan Kil</strong>, S. Chae†.</p>
-    <p class="conference-venue">KIIE conference presentation · 2024.</p>
-  </li>
-  <li>
-    <h3 class="conference-title">Optimization of Sequential Agent Order in Competitive Systems.</h3>
-    <p class="conference-authors"><strong>Younghwan Kil</strong>, S. Chae†.</p>
-    <p class="conference-venue">KIIE conference presentation · 2024.</p>
-  </li>
-</ol>
+{% include conference-presentations.html %}
 
 ## By theme
 
 - **Generative-model / diffusion safety:** ASCG, EBSG (NeurIPS 2026), Forbidden Fruit in Latent Space
-- **LLM safety auditing:** Cross-lingual safety asymmetry, Reasoning Reshapes Safety Profiles
+- **LLM safety auditing:** Cross-lingual safety asymmetry, Reasoning Reshapes Safety Profiles, Same-Loss Validation
 - **Efficient learning with physical nonlinearities:** Placement over Device Diversity
 - **Uncertainty-aware clinical AI:** DATAN, T2D detection, set-based temporal attention
 - **Dental AI:** tooth-level periodontal graph learning, conformal implant classification, oral histopathology MIL

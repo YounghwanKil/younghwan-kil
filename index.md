@@ -21,33 +21,8 @@ permalink: /
   </div>
 
   <figure class="home-portrait">
-    <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Portrait of Younghwan Kil" width="425" height="567">
+    <div class="portrait-crop"><img src="{{ '/assets/portrait.jpg' | relative_url }}" alt="Portrait of Younghwan Kil" width="2400" height="3500"></div>
   </figure>
-</section>
-
-<section class="home-section home-section--publications" aria-labelledby="selected-publications">
-  <div class="section-heading section-heading--inline">
-    <h2 id="selected-publications">Selected publications</h2>
-    <a class="text-link" href="{{ '/wiki/publications/' | relative_url }}">Full publication archive</a>
-  </div>
-
-  {% if accepted_publications and accepted_publications.size > 0 %}
-    {% include publication-list.html publications=accepted_publications %}
-  {% else %}
-    <ol class="publication-list publication-list--fallback" role="list">
-      <li class="publication-item">
-        <div class="publication-main">
-          <h3 class="publication-title">Publication data is being refreshed.</h3>
-          <p class="publication-venue">See the full archive for the current accepted and under-review list.</p>
-        </div>
-        <div class="publication-links"><a class="publication-link" href="{{ '/wiki/publications/' | relative_url }}">Open publication archive</a></div>
-      </li>
-    </ol>
-  {% endif %}
-
-  <h3 id="published-conference-posters">Published conference posters</h3>
-  <p class="page-kicker">IOCDT 2026 · Online · 7–9 October 2026</p>
-  {% include conference-posters.html heading_level=4 %}
 </section>
 
 <section class="home-section" aria-labelledby="research-directions">
@@ -116,13 +91,33 @@ permalink: /
   </div>
 </section>
 
-<section class="archive-callout" aria-labelledby="wiki-callout">
-  <div>
-    <p class="eyebrow">Archive</p>
-    <h2 id="wiki-callout">Project notes, publication records, and background material.</h2>
+<section class="home-section home-section--publications" aria-labelledby="home-publications">
+  <div class="section-heading section-heading--inline">
+    <h2 id="home-publications">Publications</h2>
+    <a class="text-link" href="{{ '/wiki/publications/' | relative_url }}">All publications</a>
   </div>
-  <div class="archive-callout__links">
-    <a href="{{ '/wiki/' | relative_url }}">Browse wiki</a>
-    <a href="{{ '/wiki/projects/' | relative_url }}">Projects</a>
-  </div>
+
+  {% if accepted_publications and accepted_publications.size > 0 %}
+    {% include publication-list.html publications=accepted_publications %}
+  {% else %}
+    <ol class="publication-list publication-list--fallback" role="list">
+      <li class="publication-item">
+        <div class="publication-main">
+          <h3 class="publication-title">Publication data is being refreshed.</h3>
+          <p class="publication-venue">See the full archive for the current accepted and under-review list.</p>
+        </div>
+        <div class="publication-links"><a class="publication-link" href="{{ '/wiki/publications/' | relative_url }}">Open publication archive</a></div>
+      </li>
+    </ol>
+  {% endif %}
+
+  <h3 id="published-conference-posters">Conference posters</h3>
+  <p class="page-kicker">IOCDT 2026 · Online · 7–9 October 2026</p>
+  {% include conference-posters.html heading_level=4 compact=true %}
+<details class="conference-more">
+<summary>More conference presentations — HealthAI and KIIE</summary>
+{% include conference-presentations.html %}
+</details>
 </section>
+
+<p class="home-archive-links"><a href="{{ '/wiki/' | relative_url }}">Research wiki</a> · <a href="{{ '/wiki/projects/' | relative_url }}">Project notes</a> · <a href="{{ '/wiki/profile/' | relative_url }}">Full profile</a></p>

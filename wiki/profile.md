@@ -98,7 +98,7 @@ systems-reliability mindset to modern AI.
   safety ↔ healthcare; theory ↔ deployment. I'm comfortable being the person who connects a
   rigorous method to a messy real problem. *Evidence:* IE + CS double major feeding an AI
   research career; clinical + generative-safety portfolio.
-- **High-volume, rigorous execution.** A large, evidence-backed body of work (6 papers + 5
+- **High-volume, rigorous execution.** A large, evidence-backed body of work ({{ site.data.publications.size }} papers + {{ site.data.conference_posters.size | plus: 5 }}
   conference presentations spanning diffusion safety, LLM safety auditing, and clinical AI)
   produced alongside coursework, teaching, and national R&D projects. *Evidence:*
   publication list; *Summa Cum Laude*; 4 semesters of physics tutoring.
