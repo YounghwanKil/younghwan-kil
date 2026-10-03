@@ -482,12 +482,14 @@ class BrowserSmokeTests(unittest.TestCase):
                     evidence['anchor_heading_clear_of_sticky_header'] = 'PASS'
                     page.goto(route_url(base_url, '/'), wait_until='networkidle')
                     self.assertEqual(page.locator('details .conference-list').count(), 0)
+                    self.assertEqual(page.locator('.home-section--publications .publication-item[data-status="review"]').count(), 4)
+                    self.assertTrue(page.locator('#home-under-review').is_visible())
                     presentations = page.locator('.home-section--publications .conference-list > li')
                     self.assertEqual(presentations.count(), 8)
                     for item in presentations.all():
                         self.assertTrue(item.is_visible(), 'All conference entries must be visible without a click')
                     self.assertTrue(page.get_by_text('International · HealthAI 2026 · Prague', exact=True).is_visible())
-                    self.assertTrue(page.get_by_text('Domestic · KIIE', exact=True).is_visible())
+                    self.assertTrue(page.get_by_text('KIIE (KCI)', exact=True).is_visible())
                     evidence['all_conference_presentations_visible'] = 'PASS'
                     evidence['mobile_menu'] = 'PASS'
 

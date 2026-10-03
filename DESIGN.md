@@ -126,7 +126,7 @@ The downloaded Linear reference at https://getdesign.md/linear.app/design-md is 
 - Keep the user's explicitly requested pure-black canvas. Do not import Linear's purple branding, product UI, gradients, logo, or stats tiles.
 - Home order: introduction, research interests, work experience, Education & Honors, then Publications as a normal section containing papers and conference posters. IOCDT, HealthAI, and KIIE presentations are shown together and always visible; no conference disclosure or toggle is used.
 - Use the supplied outdoor portrait, preserving the original decoded pixels and presenting a chest-level 4:5 CSS crop. Remove metadata without recompressing the JPEG. Do not use the generative-image preview as the website portrait.
-- New user-confirmed metadata: Haean Research Institute April 2026–Present; Reasoning and Same-Loss co-first authors; Cross-lingual ETRI Journal (SCIE) with the supplied Wiley ePDF link. Do not infer an employment role for Haean.
+- New user-confirmed metadata: Haean Research Institute 2025-04 - present; Reasoning and Same-Loss co-first authors; Cross-lingual ETRI Journal (SCIE) with the supplied Wiley ePDF link. Do not infer an employment role for Haean.
 
 ## Release validation
 The final candidate has an independent visual pass and code review approval. The website is English-only across all 14 routes, has an explicit Education & Honors primary navigation item, and omits the rejected logo/statistics display. Publication counts are derived from data (7 papers; 8 conference presentations) without a homepage statistics strip. The original portrait is pixel-preserved and metadata-sanitized, with a CSS chest-level crop; the older portrait is excluded from publication.
@@ -139,3 +139,8 @@ records feed the archive and `/metadata.json`. Search/share metadata uses per-ro
 English descriptions, the site's own text-only 1200×630 share card, and explicit
 researcher/site/article structured data. No publication status, authorship, or dates
 are inferred merely to fill metadata fields.
+
+## Latest presentation corrections
+- Haean Research Institute is shown as `2025-04 - present`, following the user's corrected start year and numeric date format.
+- The KIIE conference group is labelled `KIIE (KCI)`; presentation type/status is unchanged.
+- All four under-review papers are shown openly at the bottom of the home publication section, after all conference entries.

@@ -6,6 +6,7 @@ permalink: /
 ---
 
 {% assign accepted_publications = site.data.publications | where: 'status', 'accepted' %}
+{% assign review_publications = site.data.publications | where: 'status', 'review' %}
 
 <section class="home-hero" aria-labelledby="page-title">
   <div class="home-hero__identity">
@@ -60,7 +61,7 @@ permalink: /
   </div>
   <div class="education-highlights">
     <article>
-      <span class="timeline-list__date">April 2026–Present</span>
+      <span class="timeline-list__date">2025-04 - present</span>
       <h3>Haean Research Institute</h3>
     </article>
     <article>
@@ -115,6 +116,9 @@ permalink: /
   <p class="page-kicker">IOCDT 2026 · Online · 7–9 October 2026</p>
   {% include conference-posters.html heading_level=4 compact=true %}
 {% include conference-presentations.html %}
+
+  <h3 id="home-under-review">Under review</h3>
+  {% include publication-list.html publications=review_publications heading_level=4 %}
 </section>
 
 <p class="home-archive-links"><a href="{{ '/wiki/' | relative_url }}">Research wiki</a> · <a href="{{ '/wiki/projects/' | relative_url }}">Project notes</a> · <a href="{{ '/wiki/profile/' | relative_url }}">Full profile</a></p>

@@ -1,4 +1,4 @@
-{% assign presentation_group_names = "International · HealthAI 2026 · Prague|Domestic · KIIE" | split: "|" %}
+{% assign presentation_group_names = "International · HealthAI 2026 · Prague|KIIE (KCI)" | split: "|" %}
 {% for group_name in presentation_group_names %}
 {% assign presentations = site.data.conference_presentations | where: "group", group_name %}
 {% if presentations.size > 0 %}

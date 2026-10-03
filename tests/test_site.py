@@ -342,7 +342,8 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(text.count('HealthAI 2026 · Poster (accepted)'), 2)
         self.assertIn('Co-first author', text)
         self.assertIn('Sole author', text)
-        self.assertIn('Domestic · KIIE', text)
+        self.assertIn('KIIE (KCI)', text)
+        self.assertNotIn('Domestic · KIIE', text)
 
     def test_published_sciforum_posters_are_separate_from_papers(self):
         expected = {
@@ -411,9 +412,12 @@ class SiteTests(unittest.TestCase):
         self.assertIn(BASE + '/assets/portrait.jpg', self.home.assets)
         self.assertNotIn('Full publication archive', _normalized_text(self.home.text))
 
-    def test_home_uses_same_accepted_publications(self):
-        self.assertEqual(self.home.statuses, ['accepted'] * 3)
-        for paper in ('ebsg', 'ascg', 'cross-lingual'):
+    def test_home_uses_same_paper_records(self):
+        self.assertEqual(self.home.statuses, ['accepted'] * 3 + ['review'] * 4)
+        self.assertEqual(set(self.home.papers), set(self.publications.papers))
+        self.assertIn('home-under-review', self.home.ids)
+        self.assertGreater(self.home.ids.index('home-under-review'), self.home.ids.index('published-conference-posters'))
+        for paper in self.publications.papers:
             self.assertEqual(self.home.paper_text(paper), self.publications.paper_text(paper))
 
     def test_home_has_no_rejected_logo_or_stats_strip(self):
@@ -426,7 +430,8 @@ class SiteTests(unittest.TestCase):
             page = self.pages[route][1]
             text = _normalized_text(page.text)
             self.assertIn('Haean Research Institute', text)
-            self.assertIn('April 2026–Present', text)
+            self.assertIn('2025-04 - present', text)
+            self.assertNotIn('April 2026–Present', text)
             self.assertIn('AIRS Medical', text)
             self.assertIn('Medical AI Intern', text)
         self.assertIn('September–December 2022', _normalized_text(self.home.text))

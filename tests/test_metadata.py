@@ -131,6 +131,10 @@ class MetadataTests(unittest.TestCase):
         self.assertEqual([a['name'] for a in papers['reasoning-safety']['authors']], ['Younghwan Kil', 'Sungwon Chae'])
         presentations = self.data['presentations']
         self.assertEqual(len(presentations), 8)
+        kiie = [item for item in presentations if item['venue_short'] == 'KIIE']
+        self.assertEqual(len(kiie), 3)
+        self.assertTrue(all(item['group'] == 'KIIE (KCI)' for item in kiie))
+        self.assertTrue(all(item['classification'] == 'conference_presentation' for item in kiie))
         self.assertEqual(Counter(p['classification'] for p in presentations), {'published_conference_poster': 3, 'conference_presentation': 5})
         for record in [*papers.values(), *presentations]:
             for link in record.get('links', []):
