@@ -309,12 +309,46 @@ class SiteTests(unittest.TestCase):
             'Optimization of Sequential Agent Order in Competitive Systems.',
         ):
             self.assertIn(title, text)
-        self.assertIn('5 conference presentations', text)
+        self.assertIn('8 conference presentations', text)
         self.assertIn('International · HealthAI 2026 · Prague', text)
         self.assertEqual(text.count('HealthAI 2026 · Poster (accepted)'), 2)
         self.assertIn('Co-first author', text)
         self.assertIn('Sole author', text)
         self.assertIn('Domestic · KIIE', text)
+
+    def test_published_sciforum_posters_are_separate_from_papers(self):
+        expected = {
+            'iocdt-periodontal-gat': ('https://sciforum.net/paper/34014',
+                'Graph Attention Networks for Tooth-Level Periodontal Status Prediction via Inter-Tooth Spatial Dependency Modeling'),
+            'iocdt-implant-classification': ('https://sciforum.net/paper/34015',
+                'Temperature-Scaled Convolutional Neural Networks with Split Conformal Prediction for Reliable Dental Implant Type Classification from Panoramic Radiographs'),
+            'iocdt-oral-histology-mil': ('https://sciforum.net/paper/34018',
+                'Attention-Based Multi-Instance Learning for Weakly-Supervised Identification of Diagnostically Relevant Regions in Oral Squamous Cell Carcinoma Histopathology'),
+        }
+        for page in (self.home, self.publications):
+            text = _normalized_text(page.text)
+            for poster_id, (url, title) in expected.items():
+                self.assertIn(poster_id, page.ids)
+                self.assertIn(url, page.links)
+                self.assertIn(title, text)
+                self.assertNotIn(poster_id, page.papers)
+            self.assertEqual(page.source.count('class="conference-poster"'), 3)
+            self.assertEqual(text.count('Published 02 Oct 2026'), 3)
+            self.assertIn('Nakyung Kil', text)
+            self.assertIn('MDPI / Sciforum · Poster', text)
+            self.assertNotIn('Poster uploaded', text)
+            self.assertNotIn('PerioEDL', text)
+            self.assertNotIn('178305', text)
+
+    def test_pdf_visible_label_is_short_and_link_is_unchanged(self):
+        target = BASE + '/assets/papers/ebsg-neurips-2026-camera-ready.pdf'
+        for route in ('/', '/wiki/publications/', '/wiki/projects/ebsg/'):
+            page = self.pages[route][1]
+            anchors = [a for a in page.anchors if a['href'] == target]
+            self.assertEqual(len(anchors), 1)
+            self.assertTrue(anchors[0]['text'].startswith('PDF'))
+            self.assertNotIn('Camera-ready', anchors[0]['text'])
+            self.assertNotIn('PDF · Camera-ready', page.source)
 
     def test_home_uses_same_accepted_publications(self):
         self.assertEqual(self.home.statuses, ['accepted'] * 3)

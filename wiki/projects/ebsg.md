@@ -14,7 +14,7 @@ permalink: /wiki/projects/ebsg/
 > **Authors:** Younghwan Kil, Joonhyeong Park, Giung Nam, Jinwoo Shin, Juho Lee.
 > **Primary area:** Socio-technical aspects of AI (safety). **Secondary:** Computer vision.
 
-[PDF · Camera-ready]({{ '/assets/papers/ebsg-neurips-2026-camera-ready.pdf' | relative_url }}) · [OpenReview](https://openreview.net/forum?id=kCWbL63oQy)
+[PDF]({{ '/assets/papers/ebsg-neurips-2026-camera-ready.pdf' | relative_url }}) · [OpenReview](https://openreview.net/forum?id=kCWbL63oQy)
 
 - TOC
 {:toc}

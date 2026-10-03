@@ -18,7 +18,7 @@ permalink: /wiki/publications/
 
 <div class="publication-summary">
   <span><strong>{{ site.data.publications.size }} papers</strong> / {{ accepted_papers.size }} accepted · {{ review_papers.size }} under review</span>
-  <span>5 conference presentations</span>
+  <span>{{ site.data.conference_posters.size | plus: 5 }} conference presentations</span>
   {% if site.openreview_url %}<a href="{{ site.openreview_url }}">OpenReview profile <span aria-hidden="true">↗</span></a>{% endif %}
 </div>
 
@@ -48,6 +48,9 @@ permalink: /wiki/publications/
   <span class="section-number" aria-hidden="true">03 /</span>
   <h2 id="conference-presentations">Conference presentations</h2>
 </div>
+
+<p class="page-kicker">International · IOCDT 2026 · Online · 7–9 October 2026</p>
+{% include conference-posters.html %}
 
 <p class="page-kicker">International · HealthAI 2026 · Prague</p>
 <ol class="conference-list" role="list">
@@ -89,4 +92,5 @@ permalink: /wiki/publications/
 - **LLM safety auditing:** Cross-lingual safety asymmetry, Reasoning Reshapes Safety Profiles
 - **Efficient learning with physical nonlinearities:** Placement over Device Diversity
 - **Uncertainty-aware clinical AI:** DATAN, T2D detection, set-based temporal attention
+- **Dental AI:** tooth-level periodontal graph learning, conformal implant classification, oral histopathology MIL
 - **Industrial-engineering / OR roots:** queuing, sequential agents

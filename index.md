@@ -54,7 +54,7 @@ permalink: /
     <span class="index-strip__label">under review</span>
   </a>
   <a href="{{ '/wiki/publications/' | relative_url }}#conference-presentations">
-    <span class="index-strip__value">5</span>
+    <span class="index-strip__value">{{ site.data.conference_posters.size | plus: 5 }}</span>
     <span class="index-strip__label">presentations</span>
   </a>
   <a href="{{ '/wiki/research/' | relative_url }}">
@@ -86,6 +86,10 @@ permalink: /
       </li>
     </ol>
   {% endif %}
+
+  <h3 id="published-conference-posters">Published conference posters</h3>
+  <p class="page-kicker">IOCDT 2026 · Online · 7–9 October 2026</p>
+  {% include conference-posters.html heading_level=4 %}
 </section>
 
 <section class="home-section" aria-labelledby="research-areas">

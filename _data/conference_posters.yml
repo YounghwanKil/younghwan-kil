@@ -1,0 +1,47 @@
+# Published Sciforum conference poster records, not journal articles.
+# Public pages verified on 2026-10-03; withdrawn PerioEDL is intentionally excluded.
+- id: iocdt-periodontal-gat
+  title: "Graph Attention Networks for Tooth-Level Periodontal Status Prediction via Inter-Tooth Spatial Dependency Modeling"
+  authors:
+    - name: Younghwan Kil
+      self: true
+  venue: The 1st International Online Conference on Dentistry
+  venue_short: IOCDT 2026
+  publisher: MDPI / Sciforum
+  session: S8. AI in Dentistry
+  event_dates: 7–9 October 2026
+  status: Published
+  published_on: "2026-10-02"
+  type: Poster
+  url: https://sciforum.net/paper/34014
+
+- id: iocdt-implant-classification
+  title: "Temperature-Scaled Convolutional Neural Networks with Split Conformal Prediction for Reliable Dental Implant Type Classification from Panoramic Radiographs"
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: Nakyung Kil
+  venue: The 1st International Online Conference on Dentistry
+  venue_short: IOCDT 2026
+  publisher: MDPI / Sciforum
+  session: S8. AI in Dentistry
+  event_dates: 7–9 October 2026
+  status: Published
+  published_on: "2026-10-02"
+  type: Poster
+  url: https://sciforum.net/paper/34015
+
+- id: iocdt-oral-histology-mil
+  title: "Attention-Based Multi-Instance Learning for Weakly-Supervised Identification of Diagnostically Relevant Regions in Oral Squamous Cell Carcinoma Histopathology"
+  authors:
+    - name: Younghwan Kil
+      self: true
+  venue: The 1st International Online Conference on Dentistry
+  venue_short: IOCDT 2026
+  publisher: MDPI / Sciforum
+  session: S8. AI in Dentistry
+  event_dates: 7–9 October 2026
+  status: Published
+  published_on: "2026-10-02"
+  type: Poster
+  url: https://sciforum.net/paper/34018
