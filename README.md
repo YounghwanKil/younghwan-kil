@@ -13,6 +13,10 @@ A personal academic homepage and research wiki, built with Jekyll and published 
 - `assets/papers/`: verified, author-owned camera-ready PDFs only.
 - `wiki/`: full publication archive, projects, profile, research, education, and notes.
 - `DESIGN.md`: maintained design contract.
+- `_data/conference_presentations.yml`: shared HealthAI/KIIE records, shown without a toggle.
+- `_includes/structured-metadata.html`: researcher/site and publication JSON-LD.
+- `metadata.json`: public machine-readable record derived from the same paper/presentation data.
+- `assets/social-card.png`: 1200×630 sharing preview, rendered by `scripts/render_social_card.py`.
 
 ## Preview and verify
 
@@ -60,3 +64,21 @@ review copies and PDFs marked “Do not distribute” are not camera-ready artif
 
 Private credential documents and local workflow artifacts are explicitly excluded
 from the Jekyll output. Never stage them for Git.
+
+## Search and sharing metadata
+
+Per-route descriptions and the default sharing image are maintained in `_config.yml`.
+Jekyll SEO tags remain the single source for title, canonical, description, OpenGraph,
+and Twitter card tags. Custom JSON-LD adds stable person/site IDs and a publication
+list with explicit Accepted / Under review states, without invented publication dates.
+The `/metadata.json` endpoint includes 7 paper and 8 conference records from shared
+YAML data. Internal links are exported as absolute URLs for reuse outside the site.
+
+To refresh the native, text-only share preview with the existing development tools:
+
+```sh
+python3 scripts/render_social_card.py
+```
+
+Metadata makes pages interpretable to crawlers and share clients; it does not guarantee
+search indexing, rankings, or immediate refresh of third-party preview caches.

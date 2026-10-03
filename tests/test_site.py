@@ -402,7 +402,9 @@ class SiteTests(unittest.TestCase):
         positions = [self.home.ids.index(name) for name in names]
         self.assertEqual(positions, sorted(positions))
         self.assertIn('published-conference-posters', self.home.ids)
-        self.assertIn('<summary>More conference presentations', self.home.source)
+        self.assertNotIn('conference-more', self.home.source)
+        self.assertNotIn('<summary>More conference presentations', self.home.source)
+        self.assertIn('>Conference presentations</h3>', self.home.source)
         self.assertNotIn('&lt;summary&gt;', self.home.source)
         self.assertIn('HealthAI 2026', _normalized_text(self.home.text))
         self.assertIn('KIIE', _normalized_text(self.home.text))

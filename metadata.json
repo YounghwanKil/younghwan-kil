@@ -1,0 +1,112 @@
+---
+layout: null
+permalink: /metadata.json
+---
+{
+  "schema_version": "1.0",
+  "site": {
+    "name": {{ site.title | jsonify }},
+    "url": {{ '/' | absolute_url | jsonify }},
+    "language": {{ site.lang | default: 'en' | jsonify }},
+    "person": {
+      "name": "Younghwan Kil",
+      "url": {{ '/' | absolute_url | jsonify }},
+      "email": {{ site.academic_email | jsonify }},
+      "profiles": [
+        {{ site.github_url | jsonify }},
+        {{ site.openreview_url | jsonify }}
+      ]
+    }
+  },
+  "papers": [
+    {% for paper in site.data.publications %}
+    {
+      "id": {{ paper.id | jsonify }},
+      {% if paper.project %}"project": {{ paper.project | jsonify }},{% endif %}
+      "title": {{ paper.title | jsonify }},
+      {% if paper.short_title %}"short_title": {{ paper.short_title | jsonify }},{% endif %}
+      "status": {{ paper.status | jsonify }},
+      "classification": {% if paper.status == 'accepted' %}"accepted"{% else %}"under_review"{% endif %},
+      "authors": [
+        {% for author in paper.authors %}
+        {
+          "name": {{ author.name | jsonify }}{% if author.self %},
+          "self": true{% endif %}{% if author.marker %},
+          "marker": {{ author.marker | jsonify }}{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]{% if paper.role or paper.venue or paper.venue_short or paper.note or paper.links %},{% endif %}
+      {% if paper.role %}"role": {{ paper.role | jsonify }}{% if paper.venue or paper.venue_short or paper.note or paper.links %},{% endif %}{% endif %}
+      {% if paper.venue %}"venue": {{ paper.venue | jsonify }}{% if paper.venue_short or paper.note or paper.links %},{% endif %}{% endif %}
+      {% if paper.venue_short %}"venue_short": {{ paper.venue_short | jsonify }}{% if paper.note or paper.links %},{% endif %}{% endif %}
+      {% if paper.note %}"note": {{ paper.note | jsonify }}{% if paper.links %},{% endif %}{% endif %}
+      {% if paper.links %}"links": [
+        {% for link in paper.links %}
+        {
+          "label": {{ link.label | jsonify }},
+          {% assign link_first = link.url | slice: 0 %}"url": {% if link_first == '/' %}{{ link.url | absolute_url | jsonify }}{% else %}{{ link.url | jsonify }}{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "presentations": [
+    {% for poster in site.data.conference_posters %}
+    {
+      "id": {{ poster.id | jsonify }},
+      "title": {{ poster.title | jsonify }},
+      "classification": "published_conference_poster",
+      "status": {{ poster.status | jsonify }},
+      "type": {{ poster.type | jsonify }},
+      "authors": [
+        {% for author in poster.authors %}
+        {
+          "name": {{ author.name | jsonify }}{% if author.self %},
+          "self": true{% endif %}{% if author.marker %},
+          "marker": {{ author.marker | jsonify }}{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "venue": {{ poster.venue | jsonify }},
+      "venue_short": {{ poster.venue_short | jsonify }},
+      "publisher": {{ poster.publisher | jsonify }},
+      "session": {{ poster.session | jsonify }},
+      "event_dates": {{ poster.event_dates | jsonify }},
+      "published_on": {{ poster.published_on | jsonify }},
+      "url": {{ poster.url | jsonify }}
+    }{% if forloop.last == false or site.data.conference_presentations.size > 0 %},{% endif %}
+    {% endfor %}
+    {% for presentation in site.data.conference_presentations %}
+    {
+      "id": {{ presentation.id | jsonify }},
+      "title": {{ presentation.title | jsonify }},
+      "classification": "conference_presentation",
+      "status": {{ presentation.status | jsonify }},
+      "type": {{ presentation.type | jsonify }},
+      "authors": [
+        {% for author in presentation.authors %}
+        {
+          "name": {{ author.name | jsonify }}{% if author.self %},
+          "self": true{% endif %}{% if author.marker %},
+          "marker": {{ author.marker | jsonify }}{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "venue": {{ presentation.venue | jsonify }},
+      "venue_short": {{ presentation.venue_short | jsonify }},
+      "group": {{ presentation.group | jsonify }}{% if presentation.year or presentation.role or presentation.links %},{% endif %}
+      {% if presentation.year %}"year": {{ presentation.year | jsonify }}{% if presentation.role or presentation.links %},{% endif %}{% endif %}
+      {% if presentation.role %}"role": {{ presentation.role | jsonify }}{% if presentation.links %},{% endif %}{% endif %}
+      {% if presentation.links %}"links": [
+        {% for link in presentation.links %}
+        {
+          "label": {{ link.label | jsonify }},
+          {% assign link_first = link.url | slice: 0 %}"url": {% if link_first == '/' %}{{ link.url | absolute_url | jsonify }}{% else %}{{ link.url | jsonify }}{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

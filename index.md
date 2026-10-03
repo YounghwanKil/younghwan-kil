@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Younghwan Kil
 layout: default
 nav_order: 1
 permalink: /
@@ -111,13 +111,10 @@ permalink: /
     </ol>
   {% endif %}
 
-  <h3 id="published-conference-posters">Conference posters</h3>
+  <h3 id="published-conference-posters">Conference presentations</h3>
   <p class="page-kicker">IOCDT 2026 · Online · 7–9 October 2026</p>
   {% include conference-posters.html heading_level=4 compact=true %}
-<details class="conference-more">
-<summary>More conference presentations — HealthAI and KIIE</summary>
 {% include conference-presentations.html %}
-</details>
 </section>
 
 <p class="home-archive-links"><a href="{{ '/wiki/' | relative_url }}">Research wiki</a> · <a href="{{ '/wiki/projects/' | relative_url }}">Project notes</a> · <a href="{{ '/wiki/profile/' | relative_url }}">Full profile</a></p>

@@ -2,9 +2,23 @@ title: Younghwan Kil
 description: >-
   Younghwan Kil — M.S. student and researcher at KAIST AI. Research in
   trustworthy AI, generative-model safety, and uncertainty-aware clinical AI.
-author: Younghwan Kil
+tagline: Trustworthy AI research
+author:
+  name: Younghwan Kil
+  type: Person
+  url: "https://younghwankil.github.io/younghwan-kil/"
 openreview_url: "https://openreview.net/profile?id=~Younghwan_Kil1"
+github_url: "https://github.com/YounghwanKil"
+academic_email: "yhgil99@snu.ac.kr"
 lang: en
+locale: en_US
+
+social:
+  name: Younghwan Kil
+  links:
+    - "https://github.com/YounghwanKil"
+    - "https://openreview.net/profile?id=~Younghwan_Kil1"
+
 
 # --- theme (installed as a gem; see Gemfile) ---
 theme: just-the-docs
@@ -13,6 +27,75 @@ baseurl: "/younghwan-kil"
 
 plugins:
   - jekyll-seo-tag
+
+# Page-specific metadata consumed by jekyll-seo-tag via Jekyll front-matter defaults.
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      image:
+        path: /assets/social-card.png
+        width: 1200
+        height: 630
+        alt: "Younghwan Kil academic website share card"
+      seo_description_max_words: 35
+  - scope:
+      path: "index.md"
+    values:
+      description: "Younghwan Kil is an M.S. student at KAIST AI researching trustworthy AI, generative-model safety, LLM safety auditing, and uncertainty-aware clinical AI."
+  - scope:
+      path: "wiki/index.md"
+    values:
+      description: "Research wiki for Younghwan Kil, linking profile, education, publications, projects, timeline, skills, and research values."
+  - scope:
+      path: "wiki/profile.md"
+    values:
+      description: "Academic profile for Younghwan Kil, including KAIST AI research focus, education, work experience, contact information, and research biography."
+  - scope:
+      path: "wiki/education.md"
+    values:
+      description: "Education and honors for Younghwan Kil, including KAIST AI M.S. study, SNU undergraduate record, scholarships, tutoring, and research participation."
+  - scope:
+      path: "wiki/research.md"
+    values:
+      description: "Overview of Younghwan Kil's research in safer generative models, LLM safety auditing, and uncertainty-aware clinical AI."
+  - scope:
+      path: "wiki/publications.md"
+    values:
+      description: "Publication archive for Younghwan Kil, separating accepted papers, manuscripts under review, and conference presentations with verified links."
+  - scope:
+      path: "wiki/projects/index.md"
+    values:
+      description: "Project index for Younghwan Kil's research on diffusion safety, LLM safety auditing, and uncertainty-aware clinical AI."
+  - scope:
+      path: "wiki/projects/ebsg.md"
+    values:
+      description: "EBSG project page for training-free exemplar-guided concept erasure in diffusion models, accepted to NeurIPS 2026."
+  - scope:
+      path: "wiki/projects/ascg.md"
+    values:
+      description: "ASCG project page for adaptive spatial classifier guidance for surgical concept suppression in diffusion models, accepted to SAFE@CVPR 2026."
+  - scope:
+      path: "wiki/projects/datan.md"
+    values:
+      description: "DATAN project page for diffusion-augmented temporal attention networks for ICU mortality prediction under sparse clinical observations."
+  - scope:
+      path: "wiki/projects/llm-safety.md"
+    values:
+      description: "LLM safety auditing project page covering cross-lingual safety asymmetry, reasoning-induced erosion, negation, and validation protocols."
+  - scope:
+      path: "wiki/skills.md"
+    values:
+      description: "Technical skills for Younghwan Kil across Python, PyTorch, JAX, diffusers, graph neural networks, uncertainty quantification, and medical AI."
+  - scope:
+      path: "wiki/timeline.md"
+    values:
+      description: "Chronological timeline of Younghwan Kil's education, research internships, AI work experience, publications, and clinical-AI projects."
+  - scope:
+      path: "wiki/values.md"
+    values:
+      description: "Research values and motivation behind Younghwan Kil's work on trustworthy AI, safety, uncertainty, rigor, and explainable research narratives."
 
 # --- just-the-docs options ---
 color_scheme: light

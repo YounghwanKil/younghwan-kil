@@ -1,0 +1,78 @@
+{% assign site_home = '/' | absolute_url %}
+{% assign person_id = site_home | append: '#person' %}
+{% assign website_id = site_home | append: '#website' %}
+{% assign portrait_url = '/assets/portrait.jpg' | absolute_url %}
+{% assign publications_page_url = '/wiki/publications/' | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": "Younghwan Kil",
+      "url": {{ site_home | jsonify }},
+      "email": {{ site.academic_email | prepend: 'mailto:' | jsonify }},
+      "image": {{ portrait_url | jsonify }},
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "KAIST Kim Jaechul Graduate School of AI"
+      },
+      "sameAs": [
+        {{ site.github_url | jsonify }},
+        {{ site.openreview_url | jsonify }}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ website_id | jsonify }},
+      "name": "Younghwan Kil",
+      "url": {{ site_home | jsonify }},
+      "inLanguage": "en",
+      "publisher": {
+        "@id": {{ person_id | jsonify }}
+      }
+    }{% if page.url == '/wiki/publications/' %},
+    {
+      "@type": "ItemList",
+      "@id": {{ publications_page_url | append: '#publication-list' | jsonify }},
+      "name": "Younghwan Kil publications",
+      "url": {{ publications_page_url | jsonify }},
+      "numberOfItems": {{ site.data.publications.size | jsonify }},
+      "itemListElement": [
+        {% for paper in site.data.publications %}
+        {% assign paper_fragment = '#'%}{% assign paper_fragment = paper_fragment | append: paper.id %}
+        {% assign paper_url = publications_page_url | append: paper_fragment %}
+        {% assign doi_link = paper.links | where: 'label', 'DOI / Journal' | first %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index | jsonify }},
+          "url": {{ paper_url | jsonify }},
+          "item": {
+            "@type": "ScholarlyArticle",
+            "@id": {{ paper_url | jsonify }},
+            "name": {{ paper.title | jsonify }},
+            "url": {{ paper_url | jsonify }},
+            "creativeWorkStatus": {% if paper.status == 'accepted' %}"Accepted"{% else %}"Under review"{% endif %},
+            "author": [
+              {% for author in paper.authors %}
+              {
+                "@type": "Person",
+                "name": {{ author.name | jsonify }}
+              }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]{% if doi_link %},
+            "identifier": {
+              "@type": "PropertyValue",
+              "propertyID": "DOI",
+              "value": {{ doi_link.url | remove: 'https://doi.org/' | jsonify }},
+              "url": {{ doi_link.url | jsonify }}
+            }{% endif %}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

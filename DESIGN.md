@@ -124,9 +124,18 @@ Test/screenshot expectations: run a local Jekyll build and inspect generated HTM
 The downloaded Linear reference at https://getdesign.md/linear.app/design-md is the single token/typography baseline (source Markdown: https://getdesign.md/design-md/linear.app/DESIGN.md). Local reference copies stay in excluded `.omx/artifacts/dark-english/references/getdesign/`.
 - Adopt restrained 56px display / 28px section scales, 600/500 heading weights, 16–18px body text, neutral charcoal surfaces, and quiet hairlines.
 - Keep the user's explicitly requested pure-black canvas. Do not import Linear's purple branding, product UI, gradients, logo, or stats tiles.
-- Home order: introduction, research interests, work experience, Education & Honors, then Publications as a normal section containing papers and conference posters. Further HealthAI/KIIE presentations remain accessible in an expandable list.
+- Home order: introduction, research interests, work experience, Education & Honors, then Publications as a normal section containing papers and conference posters. IOCDT, HealthAI, and KIIE presentations are shown together and always visible; no conference disclosure or toggle is used.
 - Use the supplied outdoor portrait, preserving the original decoded pixels and presenting a chest-level 4:5 CSS crop. Remove metadata without recompressing the JPEG. Do not use the generative-image preview as the website portrait.
 - New user-confirmed metadata: Haean Research Institute April 2026–Present; Reasoning and Same-Loss co-first authors; Cross-lingual ETRI Journal (SCIE) with the supplied Wiley ePDF link. Do not infer an employment role for Haean.
 
 ## Release validation
 The final candidate has an independent visual pass and code review approval. The website is English-only across all 14 routes, has an explicit Education & Honors primary navigation item, and omits the rejected logo/statistics display. Publication counts are derived from data (7 papers; 8 conference presentations) without a homepage statistics strip. The original portrait is pixel-preserved and metadata-sanitized, with a CSS chest-level crop; the older portrait is excluded from publication.
+
+## Always-visible conference and metadata update
+
+Conference entries on Home are not collapsed: IOCDT, HealthAI, and KIIE are visible
+in the same publication area without clicking a disclosure. The same presentation
+records feed the archive and `/metadata.json`. Search/share metadata uses per-route
+English descriptions, the site's own text-only 1200×630 share card, and explicit
+researcher/site/article structured data. No publication status, authorship, or dates
+are inferred merely to fill metadata fields.

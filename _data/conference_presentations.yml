@@ -1,0 +1,77 @@
+# Legacy conference presentation records rendered from _includes/conference-presentations.html.
+# These are conference presentations/posters, not journal articles.
+- id: healthai-datan
+  title: "DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction Under Sparse Clinical Observations."
+  authors:
+    - name: Younghwan Kil
+      self: true
+      marker: "*"
+    - name: S. K. Kim
+      marker: "*"
+    - name: S. Kim
+    - name: Y. Kim
+    - name: S. Yang
+    - name: G. Manalu
+  venue: HealthAI 2026
+  venue_short: HealthAI 2026
+  group: International · HealthAI 2026 · Prague
+  status: accepted
+  type: Poster
+  role: Co-first author
+  links:
+    - label: Project
+      url: /wiki/projects/datan/
+
+- id: healthai-t2d-detection
+  title: "Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2 Diabetes Detection."
+  authors:
+    - name: Younghwan Kil
+      self: true
+  venue: HealthAI 2026
+  venue_short: HealthAI 2026
+  group: International · HealthAI 2026 · Prague
+  status: accepted
+  type: Poster
+  role: Sole author
+
+- id: kiie-set-based-temporal-attention
+  title: "Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical Informatics Framework."
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: N. Kil
+      marker: "†"
+  venue: KIIE
+  venue_short: KIIE
+  group: Domestic · KIIE
+  year: 2025
+  status: presented
+  type: Conference presentation
+
+- id: kiie-time-dependent-queuing
+  title: "Time-Dependent Queuing Distribution for Resilient Capacity Arrangement."
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: S. Chae
+      marker: "†"
+  venue: KIIE
+  venue_short: KIIE
+  group: Domestic · KIIE
+  year: 2024
+  status: presented
+  type: Conference presentation
+
+- id: kiie-sequential-agent-order
+  title: "Optimization of Sequential Agent Order in Competitive Systems."
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: S. Chae
+      marker: "†"
+  venue: KIIE
+  venue_short: KIIE
+  group: Domestic · KIIE
+  year: 2024
+  status: presented
+  type: Conference presentation

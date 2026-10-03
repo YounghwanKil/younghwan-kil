@@ -481,11 +481,14 @@ class BrowserSmokeTests(unittest.TestCase):
                     }""")
                     evidence['anchor_heading_clear_of_sticky_header'] = 'PASS'
                     page.goto(route_url(base_url, '/'), wait_until='networkidle')
-                    disclosure = page.locator('.conference-more')
-                    disclosure.locator('summary').click()
-                    self.assertTrue(disclosure.evaluate('(element) => element.open'))
-                    self.assertTrue(disclosure.get_by_text('International · HealthAI 2026 · Prague', exact=True).is_visible())
-                    evidence['conference_disclosure'] = 'PASS'
+                    self.assertEqual(page.locator('details .conference-list').count(), 0)
+                    presentations = page.locator('.home-section--publications .conference-list > li')
+                    self.assertEqual(presentations.count(), 8)
+                    for item in presentations.all():
+                        self.assertTrue(item.is_visible(), 'All conference entries must be visible without a click')
+                    self.assertTrue(page.get_by_text('International · HealthAI 2026 · Prague', exact=True).is_visible())
+                    self.assertTrue(page.get_by_text('Domestic · KIIE', exact=True).is_visible())
+                    evidence['all_conference_presentations_visible'] = 'PASS'
                     evidence['mobile_menu'] = 'PASS'
 
                     for route in NO_JS_ROUTES:

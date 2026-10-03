@@ -488,7 +488,6 @@ ul#markdown-toc {
 .home-section--publications { border-top: 0; }
 .home-section > .section-heading h2 { border: 0; padding: 0; }
 .home-archive-links { margin-top: 3rem; color: var(--muted); }
-.conference-more { margin-top: 1.5rem; }
 .conference-list .conference-title { margin: 0 0 .5rem; line-height: 1.35; }
 .conference-list .conference-authors { margin: 0 0 .4rem; }
 .conference-list .conference-venue { margin: 0 0 .4rem; }
