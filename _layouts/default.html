@@ -12,11 +12,7 @@
     <header class="site-header" data-site-header>
       <div class="site-header__inner">
         <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Younghwan Kil home">
-          <span class="site-brand__mark" aria-hidden="true">YK</span>
-          <span class="site-brand__text">
-            <span class="site-brand__name">Younghwan Kil</span>
-            <span class="site-brand__hangul">길영환</span>
-          </span>
+          <span class="site-brand__name">Younghwan Kil</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
@@ -28,7 +24,8 @@
           <a class="site-nav__link{% if page.url == '/' %} is-active{% endif %}"{% if page.url == '/' %} aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
           <a class="site-nav__link{% if page.url contains '/wiki/publications/' %} is-active{% endif %}"{% if page.url contains '/wiki/publications/' %} aria-current="page"{% endif %} href="{{ '/wiki/publications/' | relative_url }}">Publications</a>
           <a class="site-nav__link{% if page.url contains '/wiki/research/' %} is-active{% endif %}"{% if page.url contains '/wiki/research/' %} aria-current="page"{% endif %} href="{{ '/wiki/research/' | relative_url }}">Research</a>
-          <a class="site-nav__link{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' %} is-active{% endif %}"{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' %} aria-current="page"{% endif %} href="{{ '/wiki/' | relative_url }}">Wiki</a>
+          <a class="site-nav__link{% if page.url contains '/wiki/education/' %} is-active{% endif %}"{% if page.url contains '/wiki/education/' %} aria-current="page"{% endif %} href="{{ '/wiki/education/' | relative_url }}">Education &amp; Honors</a>
+          <a class="site-nav__link{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' and page.url != '/wiki/education/' %} is-active{% endif %}"{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' and page.url != '/wiki/education/' %} aria-current="page"{% endif %} href="{{ '/wiki/' | relative_url }}">Wiki</a>
         </nav>
       </div>
     </header>
@@ -75,7 +72,7 @@
     <footer class="site-footer">
       <div class="site-footer__inner">
         <p>Younghwan Kil · <a href="mailto:yhgil99@snu.ac.kr">yhgil99@snu.ac.kr</a></p>
-        <p>Trustworthy AI · Generative-model safety · Uncertainty-aware clinical AI</p>
+        <p>KAIST AI · Trustworthy AI · Generative-model safety</p>
       </div>
     </footer>
 

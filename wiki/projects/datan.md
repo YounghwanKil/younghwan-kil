@@ -31,13 +31,17 @@ rather than naive imputation — is what makes such a model deployable.
   Medicine & AI Healthcare).
 - Co-first-author work (equal contribution).
 
-## STAR seed
+<details markdown="1">
+<summary>Writing notes</summary>
+
 - **S:** ICU mortality prediction degrades under sparse, irregular observations.
 - **T:** Learn robustly despite missingness.
 - **A:** Combined diffusion-based augmentation with a temporal attention network.
 - **R:** Accepted to HealthAI 2026 (Prague) as co-first author.
-- **Says about me:** I collaborate well and tackle *real* data problems (missingness), not
+- **Emphasis:** I collaborate well and tackle *real* data problems (missingness), not
   just clean benchmarks.
+
+</details>
 
 ## Related
 - **Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2

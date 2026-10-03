@@ -41,12 +41,16 @@ is the values-in-a-method idea: *precision over blanket censorship*. It also int
   collapse) — a distinction binary detectors like NudeNet miss.
 - Training-free — operates purely at inference.
 
-## STAR seed (for 자소서 / interview)
+<details markdown="1">
+<summary>Writing notes</summary>
+
 - **Situation:** Diffusion models generate harmful imagery; blunt erasure breaks normal use.
 - **Task:** Suppress harm *without* collateral damage, without retraining.
 - **Action:** Designed Grad-CAM-gated classifier guidance that activates only on localized
   harmful evidence; built a VLM (Qwen3-VL) evaluation beyond NudeNet; validated on SD 1.4
   across three adversarial benchmarks (UnlearnDiff, Ring-A-Bell, I2P).
 - **Result:** SOTA erasure with minimal benign damage; accepted at CVPR-W SAFE 2026 (first author).
-- **What it says about me:** I encode *"do no collateral harm"* directly into methods, and
+- **Emphasis:** I encode *"do no collateral harm"* directly into methods, and
   I validate at scale.
+
+</details>

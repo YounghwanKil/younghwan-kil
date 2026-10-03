@@ -2,12 +2,10 @@
 title: Projects
 layout: default
 parent: Wiki
-nav_order: 8
+nav_order: 5
 has_children: true
 permalink: /wiki/projects/
 ---
-
-<p class="page-kicker">Research / project index</p>
 
 # Projects
 

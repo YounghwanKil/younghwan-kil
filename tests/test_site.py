@@ -7,6 +7,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import hashlib
+import json
 import os
 import re
 import unittest
@@ -34,12 +35,30 @@ EXPECTED_NAV = {
     '/': 'Home',
     '/wiki/publications/': 'Publications',
     '/wiki/research/': 'Research',
+    '/wiki/education/': 'Education & Honors',
 }
+EXPECTED_PRIMARY_NAV = (
+    ('Home', f'{BASE}/'),
+    ('Publications', f'{BASE}/wiki/publications/'),
+    ('Research', f'{BASE}/wiki/research/'),
+    ('Education & Honors', f'{BASE}/wiki/education/'),
+    ('Wiki', f'{BASE}/wiki/'),
+)
+HANGUL_RE = re.compile(r'[\u1100-\u11FF\u3130-\u318F\uA960-\uA97F\uAC00-\uD7AF\uD7B0-\uD7FF]')
 SOURCE_PAGES = [Path('index.md'), *sorted(Path('wiki').glob('**/*.md'))]
 
 
 def _normalized_text(parts):
     return ' '.join(' '.join(parts).split())
+
+
+def _assert_no_hangul(testcase, text, context):
+    match = HANGUL_RE.search(text)
+    if match:
+        start = max(0, match.start() - 30)
+        end = min(len(text), match.end() + 30)
+        excerpt = text[start:end].replace('\n', ' ')
+        testcase.fail(f'{context}: Hangul/Jamo character {match.group(0)!r} found near {excerpt!r}')
 
 
 def _route_for_index(path):
@@ -244,10 +263,19 @@ class SiteTests(unittest.TestCase):
                 self.assertNotIn('{{', page.source)
                 self.assertNotIn('{%', page.source)
 
+                nav_pairs = [(link['text'], link['href']) for link in page.primary_nav_links]
+                self.assertEqual(nav_pairs, list(EXPECTED_PRIMARY_NAV))
+                education_links = [link for link in page.primary_nav_links if link['text'] == 'Education & Honors']
+                self.assertEqual(len(education_links), 1)
+                self.assertEqual(education_links[0]['href'], f'{BASE}/wiki/education/')
+
                 current = [link for link in page.primary_nav_links if link['attrs'].get('aria-current') == 'page']
                 self.assertEqual(len(current), 1)
+                self.assertTrue(all(link is current[0] or link['attrs'].get('aria-current') != 'page' for link in page.primary_nav_links))
                 expected_label = EXPECTED_NAV.get(route, 'Wiki')
                 self.assertEqual(current[0]['text'], expected_label)
+                if route == '/wiki/education/':
+                    self.assertEqual(current[0]['href'], f'{BASE}/wiki/education/')
 
     def test_each_page_has_core_landmarks_and_accessibility_scaffolding(self):
         for route, (_path, page) in sorted(self.pages.items()):
@@ -355,6 +383,21 @@ class SiteTests(unittest.TestCase):
         for paper in ('ebsg', 'ascg', 'cross-lingual'):
             self.assertEqual(self.home.paper_text(paper), self.publications.paper_text(paper))
 
+    def test_home_has_no_rejected_logo_or_stats_strip(self):
+        self.assertNotIn('site-brand__mark', self.home.source)
+        self.assertNotIn('index-strip', self.home.source)
+        self.assertNotIn('research pillars', _normalized_text(self.home.text).lower())
+
+    def test_confirmed_work_experience_dates(self):
+        for route in ('/', '/wiki/profile/', '/wiki/timeline/'):
+            page = self.pages[route][1]
+            text = _normalized_text(page.text)
+            self.assertIn('Haean Research Institute', text)
+            self.assertIn('April 2026–Present', text)
+            self.assertIn('AIRS Medical', text)
+            self.assertIn('Medical AI Intern', text)
+        self.assertIn('September–December 2022', _normalized_text(self.home.text))
+
     def test_verified_links(self):
         for url in (
             'https://openreview.net/profile?id=~Younghwan_Kil1',
@@ -370,6 +413,34 @@ class SiteTests(unittest.TestCase):
         pdf = SITE / 'assets/papers/ebsg-neurips-2026-camera-ready.pdf'
         self.assertEqual(hashlib.sha256(pdf.read_bytes()).hexdigest(), '1f9355f8bdbadf1a6608d1a7486015f7eed89b57f34bfb16575b0a4b6e082914')
         self.assertEqual([p.name for p in (SITE / 'assets/papers').glob('*.pdf')], [pdf.name])
+
+    def test_public_html_metadata_and_search_index_are_english_only(self):
+        public_text_files = sorted(SITE.rglob('*.html')) + sorted(SITE.rglob('*.json'))
+        self.assertTrue(public_text_files, 'built site should publish HTML and optional search JSON text files')
+        for path in public_text_files:
+            with self.subTest(path=path.relative_to(SITE)):
+                raw = path.read_text(encoding='utf-8')
+                _assert_no_hangul(self, raw, path.relative_to(SITE).as_posix())
+                if path.suffix == '.json':
+                    decoded = json.dumps(json.loads(raw), ensure_ascii=False)
+                    _assert_no_hangul(self, decoded, f'{path.relative_to(SITE).as_posix()} decoded JSON')
+
+    def test_education_page_preserves_degree_and_honor_facts(self):
+        text = _normalized_text(self.pages['/wiki/education/'][1].text)
+        for expected in (
+            'M.S., Kim Jaechul Graduate School of AI',
+            'Korea Advanced Institute of Science and Technology',
+            'B.S., Industrial Engineering',
+            'Computer Science',
+            'Seoul National University',
+            'Summa Cum Laude',
+            'Cumulative GPA 4.00 / 4.30',
+            'Merit scholarship',
+            'Physics tutor',
+            'KAIRI intern',
+        ):
+            with self.subTest(expected=expected):
+                self.assertIn(expected, text)
 
     def test_private_and_development_files_not_published(self):
         for name in ('credentials', '.omx', '.omc', 'tests', 'scripts', 'DESIGN.md', 'README.md'):

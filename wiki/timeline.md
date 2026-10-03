@@ -2,27 +2,28 @@
 title: Timeline
 layout: default
 parent: Wiki
-nav_order: 3
+nav_order: 6
 permalink: /wiki/timeline/
 ---
 
 # Career & Study Timeline
 {: .no_toc }
 
-Chronological path with context for *why each step mattered* — useful for the
-"성장 과정 / 지원 동기" sections of a 자소서.
+Chronological path with context for why each step mattered, useful for personal statements
+and interviews.
 
 | Period | What | Context |
 |--------|------|---------|
 | **2018** | Enter **Seoul National University**, B.S. Industrial Engineering (+ **Computer Science double major**) | Systems-reliability foundation (optimization, statistics, stochastic systems) paired with a full CS core. |
 | **2020-08 – 2022-02** | **Mandatory military service**, ROK Army (Goseong, Gangwon-do) | 18-month tour; returned to studies with the AI pivot ahead. |
-| **2022-09 – 2022-12** | **Medical AI Intern**, AIRS Medical (에어스메디컬) | First hands-on deep learning for medical imaging — 3 internal tasks. Seeded the clinical-AI direction. |
+| **2022-09 – 2022-12** | **Medical AI Intern**, AIRS Medical | First hands-on deep learning for medical imaging — 3 internal tasks. Seeded the clinical-AI direction. |
 | **2023-12 – 2025-02** | **Undergraduate Research Intern**, KAIRI Program, KAIST AI | 14-month research internship (Winter-2023 KAIRI cohort, 1st-choice admit) run concurrently with the final 3 SNU semesters. Bridge into serious research. |
 | **2024** | First **KIIE (KCI)** papers | Sequential-agent ordering; time-dependent queuing — industrial-engineering roots, published. |
-| **2025-02** | **Graduate SNU** — *Summa Cum Laude* (최우등), GPA 4.00/4.30 | 4× merit scholarships; 4 semesters tutoring physics. |
+| **2025-02** | **Graduate SNU** — *Summa Cum Laude*, GPA 4.00/4.30 | 4× merit scholarships; 4 semesters tutoring physics. |
 | **2025-03 – present** | **M.S. student & graduate researcher**, KAIST Kim Jaechul Graduate School of AI | Trustworthy-AI research group. Research Assistant on 6 IITP/NRF national R&D projects. |
 | **2025 (mid) – present** | Diffusion-safety line: **ASCG → EBSG** | ASCG accepted to Workshop on Synthetic & Adversarial ForEnsics (SAFE@CVPR 2026); **EBSG** (training-free exemplar-guided erasure) accepted to **NeurIPS 2026**. |
 | **2025–2026** | Clinical-AI work (DATAN, T2D detection, set-based temporal attention) | Uncertainty-aware medical models; 2 posters accepted to HealthAI 2026 (Prague). |
+| **April 2026–Present** | **Haean Research Institute** | Current employment. |
 | **2026** | LLM-safety line (cross-lingual asymmetry, reasoning-induced erosion, negation) | Auditing 6 open-source LLMs; cross-lingual safety paper accepted at ETRI Journal; reasoning and negation papers under review. |
 
 ## The story in one breath

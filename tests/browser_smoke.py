@@ -6,7 +6,7 @@ Run after `bundle exec jekyll build`:
 Configuration:
   SITE_DIR      built site directory, default: _site
   BASE_URL      optional already-running site root, e.g. http://127.0.0.1:4000/younghwan-kil
-  ARTIFACT_DIR  JSON and screenshot output, default: .omx/artifacts/editorial-v2
+  ARTIFACT_DIR  JSON and screenshot output, default: .omx/artifacts/dark-english
 """
 from contextlib import contextmanager
 from functools import partial
@@ -22,7 +22,7 @@ from playwright.sync_api import sync_playwright
 
 SITE = Path(os.environ.get('SITE_DIR', '_site')).resolve()
 BASE_PATH = '/younghwan-kil'
-ARTIFACT_DIR = Path(os.environ.get('ARTIFACT_DIR', '.omx/artifacts/editorial-v2'))
+ARTIFACT_DIR = Path(os.environ.get('ARTIFACT_DIR', '.omx/artifacts/dark-english'))
 EXPECTED_ROUTES = {
     '/',
     '/wiki/',
@@ -39,7 +39,7 @@ EXPECTED_ROUTES = {
     '/wiki/timeline/',
     '/wiki/values/',
 }
-VIEWPORTS = (320, 390, 768, 1440)
+VIEWPORTS = (320, 390, 768, 900, 1440)
 SCREENSHOT_ROUTES = {
     'home': '/',
     'publications': '/wiki/publications/',
@@ -52,6 +52,13 @@ SCREENSHOT_ROUTES = {
 }
 TABLE_ROUTES = {'/wiki/education/', '/wiki/profile/', '/wiki/timeline/'}
 NO_JS_ROUTES = ('/', '/wiki/projects/ebsg/', '/wiki/education/')
+EXPECTED_PRIMARY_NAV = (
+    ('Home', f'{BASE_PATH}/'),
+    ('Publications', f'{BASE_PATH}/wiki/publications/'),
+    ('Research', f'{BASE_PATH}/wiki/research/'),
+    ('Education & Honors', f'{BASE_PATH}/wiki/education/'),
+    ('Wiki', f'{BASE_PATH}/wiki/'),
+)
 
 
 def route_for_index(path):
@@ -172,6 +179,8 @@ class BrowserSmokeTests(unittest.TestCase):
                                 issues.append(f'bad local responses: {bad_statuses}')
                             if broken_images:
                                 issues.append(f'broken images: {broken_images}')
+                            issues.extend(self.primary_nav_issues(page, route, width))
+                            issues.extend(self.dark_canvas_and_text_contrast_issues(page, route, width))
                             if route in TABLE_ROUTES:
                                 issues.extend(self.table_content_and_reachability_issues(page, route, width))
                             evidence.append({
@@ -193,6 +202,126 @@ class BrowserSmokeTests(unittest.TestCase):
         failures = [case for case in evidence if case['issues']]
         (ARTIFACT_DIR / 'browser-smoke-responsive.json').write_text(json.dumps({'routes': self.routes, 'cases': evidence, 'failures': failures}, indent=2), encoding='utf-8')
         self.assertEqual(failures, [], f'Browser smoke failures written to {ARTIFACT_DIR / "browser-smoke-responsive.json"}')
+
+    def primary_nav_issues(self, page, route, width):
+        return page.locator('[data-site-nav]').evaluate('''(nav, args) => {
+            const [route, width, expectedNav] = args;
+            const issues = [];
+            const links = Array.from(nav.querySelectorAll('a')).map(link => ({
+              text: link.textContent.trim(),
+              href: new URL(link.getAttribute('href'), location.href).pathname,
+              current: link.getAttribute('aria-current') === 'page',
+              visible: getComputedStyle(link).display !== 'none' && getComputedStyle(link).visibility !== 'hidden',
+              rect: link.getBoundingClientRect(),
+            }));
+            const actualNav = links.map(link => [link.text, link.href]);
+            if (JSON.stringify(actualNav) !== JSON.stringify(expectedNav)) {
+              issues.push(`${route} at ${width}px primary nav mismatch: ${JSON.stringify(actualNav)}`);
+            }
+            const current = links.filter(link => link.current);
+            if (current.length !== 1) {
+              issues.push(`${route} at ${width}px should have exactly one current primary nav item, got ${current.length}`);
+            } else {
+              const expectedCurrent = route === '/' ? 'Home'
+                : route === '/wiki/publications/' ? 'Publications'
+                : route === '/wiki/research/' ? 'Research'
+                : route === '/wiki/education/' ? 'Education & Honors'
+                : 'Wiki';
+              if (current[0].text !== expectedCurrent) {
+                issues.push(`${route} at ${width}px current nav should be ${expectedCurrent}, got ${current[0].text}`);
+              }
+              if (route === '/wiki/education/' && current[0].href !== `${location.pathname.split('/wiki/education/')[0]}/wiki/education/`) {
+                issues.push(`${route} at ${width}px Education & Honors current link should target /wiki/education/`);
+              }
+            }
+            const toggle = document.querySelector('[data-nav-toggle]');
+            const toggleVisible = toggle && getComputedStyle(toggle).display !== 'none' && getComputedStyle(toggle).visibility !== 'hidden';
+            const header = document.querySelector('[data-site-header]');
+            const headerRect = header && header.getBoundingClientRect();
+            const navRect = nav.getBoundingClientRect();
+            if (!toggleVisible) {
+              const visibleLinks = links.filter(link => link.visible);
+              if (visibleLinks.length !== expectedNav.length) {
+                issues.push(`${route} at ${width}px desktop/tablet nav should show all ${expectedNav.length} links or switch to menu`);
+              }
+              if (headerRect && (navRect.right > document.documentElement.clientWidth + 1 || navRect.left < -1)) {
+                issues.push(`${route} at ${width}px expanded nav should fit viewport or switch to menu`);
+              }
+              const rows = new Set(visibleLinks.map(link => Math.round(link.rect.top)));
+              if (rows.size > 1 && width >= 768) {
+                issues.push(`${route} at ${width}px primary nav wraps; switch to menu or tighten spacing`);
+              }
+              if (headerRect && navRect.bottom > headerRect.bottom + 1) {
+                issues.push(`${route} at ${width}px primary nav overflows header height`);
+              }
+            } else if (width >= 900) {
+              issues.push(`${route} at ${width}px should have enough space for five primary links without mobile menu`);
+            }
+            return issues;
+          }''', [route, width, list(EXPECTED_PRIMARY_NAV)])
+
+    def dark_canvas_and_text_contrast_issues(self, page, route, width):
+        return page.evaluate('''([route, width]) => {
+            const issues = [];
+            const parseRgb = (value) => {
+              const match = value.match(/rgba?\(([^)]+)\)/);
+              if (!match) return null;
+              const parts = match[1].split(',').map(part => parseFloat(part));
+              if (parts.length < 3 || parts.some(Number.isNaN)) return null;
+              return {r: parts[0], g: parts[1], b: parts[2], a: parts.length >= 4 ? parts[3] : 1};
+            };
+            const linear = (channel) => {
+              const value = channel / 255;
+              return value <= 0.03928 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4);
+            };
+            const luminance = (rgb) => 0.2126 * linear(rgb.r) + 0.7152 * linear(rgb.g) + 0.0722 * linear(rgb.b);
+            const contrast = (fg, bg) => {
+              const lighter = Math.max(luminance(fg), luminance(bg));
+              const darker = Math.min(luminance(fg), luminance(bg));
+              return (lighter + 0.05) / (darker + 0.05);
+            };
+            const bodyBg = parseRgb(getComputedStyle(document.body).backgroundColor);
+            const htmlBg = parseRgb(getComputedStyle(document.documentElement).backgroundColor);
+            for (const [name, bg] of [['body', bodyBg], ['html', htmlBg]]) {
+              if (!bg || bg.a === 0) {
+                issues.push(`${route} at ${width}px ${name} background should be an opaque dark neutral canvas`);
+                continue;
+              }
+              const lum = luminance(bg);
+              const channelSpread = Math.max(bg.r, bg.g, bg.b) - Math.min(bg.r, bg.g, bg.b);
+              if (lum > 0.08) issues.push(`${route} at ${width}px ${name} background luminance ${lum.toFixed(3)} is not dark enough`);
+              if (channelSpread > 32) issues.push(`${route} at ${width}px ${name} background should be neutral black/gray, got rgb(${bg.r}, ${bg.g}, ${bg.b})`);
+            }
+            const canvas = bodyBg && bodyBg.a !== 0 ? bodyBg : htmlBg;
+            if (!canvas) return issues;
+            const candidates = Array.from(document.querySelectorAll('main h1, main h2, main h3, main p, main li, main td, main th, [data-site-nav] a'))
+              .filter(node => node.textContent.trim().length >= 3)
+              .filter(node => {
+                const rect = node.getBoundingClientRect();
+                const style = getComputedStyle(node);
+                return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
+              })
+              .slice(0, 80);
+            const lowContrast = [];
+            for (const node of candidates) {
+              const style = getComputedStyle(node);
+              const fg = parseRgb(style.color);
+              let bg = parseRgb(style.backgroundColor);
+              let parent = node.parentElement;
+              while ((!bg || bg.a === 0) && parent) {
+                bg = parseRgb(getComputedStyle(parent).backgroundColor);
+                parent = parent.parentElement;
+              }
+              bg = bg && bg.a !== 0 ? bg : canvas;
+              if (fg && contrast(fg, bg) < 4.5) {
+                lowContrast.push(`${node.tagName.toLowerCase()}:${node.textContent.trim().slice(0, 40)} (${contrast(fg, bg).toFixed(2)})`);
+              }
+            }
+            if (lowContrast.length) {
+              issues.push(`${route} at ${width}px text contrast below 4.5: ${lowContrast.slice(0, 5).join('; ')}`);
+            }
+            return issues;
+          }''', [route, width])
 
     def table_content_and_reachability_issues(self, page, route, width):
         tables = page.locator('table')
@@ -334,10 +463,16 @@ class BrowserSmokeTests(unittest.TestCase):
                     self.assertFalse(nav.is_visible())
                     self.assertTrue(toggle.evaluate('(element) => document.activeElement === element'), 'Escape should return focus to menu toggle')
                     toggle.click()
+                    nav.get_by_text('Education & Honors', exact=True).click()
+                    page.wait_for_url('**/wiki/education/')
+                    self.assertEqual(page.locator('[data-site-nav] a[aria-current="page"]').text_content().strip(), 'Education & Honors')
+                    self.assertEqual(page.locator('[data-site-nav] a[aria-current="page"]').get_attribute('href'), f'{BASE_PATH}/wiki/education/')
+
+                    toggle.click()
                     nav.get_by_text('Publications', exact=True).click()
                     page.wait_for_url('**/wiki/publications/')
                     self.assertEqual(page.locator('.publication-item').count(), 6)
-                    self.assertEqual(page.locator('.site-nav a[aria-current="page"]').text_content().strip(), 'Publications')
+                    self.assertEqual(page.locator('[data-site-nav] a[aria-current="page"]').text_content().strip(), 'Publications')
                     page.locator('.archive-jump a[href="#under-review"]').click()
                     page.wait_for_function("""() => {
                         const heading = document.querySelector('#under-review').getBoundingClientRect();

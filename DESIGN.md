@@ -3,129 +3,119 @@
 ## Source of truth
 Status: Active
 Date: 2026-10-03
-Product surfaces: personal academic homepage (`/`), publication archive (`/wiki/publications/`), research/wiki pages under `/wiki/`, shared default layout, publication-list include styling.
-Evidence reviewed: Jekyll/Just-the-Docs setup (`Gemfile`, `_config.yml`), current homepage (`index.md`), shared layout (`_layouts/default.html`), publication include contract, publication data (`_data/publications.yml`), wiki pages, `assets/profile.jpg` (425×567 portrait), live screenshots under `.omx/artifacts/editorial-v2/`, and the Giung Nam reference as a credibility benchmark rather than a visual template. Existing unrelated local edits in `.gitignore`, `wiki/education.md`, and `wiki/projects/ascg.md` are outside design ownership.
+Product surfaces: personal academic homepage (`/`), publication archive (`/wiki/publications/`), research and education wiki routes, shared default layout, shared publication-list include styling.
+Evidence reviewed: `Gemfile`, `_config.yml`, `DESIGN.md`, `index.md`, `_layouts/default.html`, `assets/css/site.css`, `_includes/publication-list.html`, `_data/publications.yml`, `wiki/education.md`, `wiki/index.md`, and the available local `.omx` artifact inventory. The prior light editorial dossier direction is rejected by the current brief.
 
 ## Brand
-Personality: exacting, research-first, editorial, quietly severe, Korean/English academic identity.
-Trust signals: KAIST AI affiliation, accepted/under-review publication status, named research themes, project/archive links, consistent metadata, clear contact path, and source-of-truth wiki framing.
-Avoid: warm beige portfolio templates, capsule/pill UI everywhere, raised marketing cards, decorative gradients/shadows, dashboard tiles, generic SaaS hero language, playful emoji-heavy UI, unverified CV/download links, and publication facts not backed by the data/wiki source.
+Personality: severe, calm, exact, academic, black-canvas, immediately legible.
+Trust signals: KAIST AI role, real portrait, direct email/GitHub/OpenReview links, accepted papers placed directly below the identity block, real venues/status labels, education and honors exposed in primary navigation.
+Avoid: AI-generated portfolio cues, purple/blue gradients, glow, grid textures, monograms, oversized serif dossier headlines, numbered rails, fake counters, dashboard strips, bento cards, motivational filler, and visible non-English metadata in the shared UI.
 
 ## Product goals
 Goals:
-- Present Younghwan Kil as a trustworthy AI researcher through an academic dossier/index, not a portfolio landing page.
-- Make the homepage immediately useful: identity, role, contact/profile links, compact publication counts, accepted publications high on the page, research ledger, and education/current path.
-- Make publications read as a flat bibliography/index with sharp hierarchy and status clarity.
-- Keep long-form wiki pages readable and reusable for CV/research-statement writing.
+- Make the homepage explain who Younghwan Kil is, his M.S./KAIST/SIML role, what he studies, and how to contact him without scrolling.
+- Put the three accepted publications immediately after the hero with readable titles, authors, venues, status, and direct links.
+- Keep the rest of the site as a clean dark academic archive rather than a marketing landing page.
+- Add Education & Honors as a first-class primary navigation item.
 
 Non-goals:
-- Rewriting publication facts, statuses, authors, PDF links, or research claims owned by the publication/content lane.
-- Adding JavaScript-heavy search, analytics, new dependencies, external fonts, new images, or deployment/publishing changes.
-- Pixel-copying the reference site.
+- Changing publication facts, PDF/OpenReview paths, portrait pixels, Jekyll configuration, or wiki content owned by other lanes.
+- Adding dependencies, external fonts, generated images, decorative JavaScript, analytics, or deployment changes.
+- Reusing the rejected light editorial/serif visual system.
 
-Success signals: pages build in Jekyll, all markdown routes keep their URLs, homepage feels like a distinctive academic research dossier, accepted work appears before secondary content, wiki pages have comfortable reading measure and table handling, keyboard users can skip/navigation-focus reliably, and mobile navigation remains compact at 320/390px.
+Success signals: Jekyll builds, all public routes inherit the dark redesign, navigation has five clear items, active states are unique, accepted papers are prominent, long text and tables do not overflow, and contrast remains AA-minded on near-black.
 
 ## Personas and jobs
 Primary personas:
-- Faculty/PIs and admissions/recruiting readers who need a fast credibility scan.
-- Research collaborators checking papers, projects, and contact links.
-- Younghwan reusing wiki material for CVs, statements, and 자기소개서.
+- Faculty/PIs/reviewers scanning credibility and current research focus.
+- Collaborators looking for papers, projects, and contact links.
+- Recruiters or academic readers checking education, honors, and trajectory.
 
 User jobs:
-- Understand current role, research focus, and academic trajectory in under one minute.
-- Find accepted publications, under-review work, and project detail with minimal friction.
-- Read long-form wiki content without documentation-theme clutter.
-- Verify links and status labels without confusing submissions and accepted work.
+- Understand identity, affiliation, research focus, and contact path in seconds.
+- Open accepted papers or OpenReview/PDF links quickly.
+- Move between Publications, Research, Education & Honors, and Wiki without ambiguity.
+- Read long academic pages on desktop and mobile without decorative clutter.
 
-Contexts of use: desktop academic browsing, mobile quick checks after meeting/conference conversations, GitHub Pages with `baseurl: /younghwan-kil`, static no-dependency hosting.
+Contexts of use: GitHub Pages static site with `baseurl: /younghwan-kil`, desktop academic browsing, mobile follow-up after meetings, no external asset loading.
 
 ## Information architecture
-Navigation: global header with four primary routes — Home, Publications, Research, Wiki — plus a compact mobile menu using the existing `data-nav-toggle`/`data-site-nav` JavaScript contract.
+Navigation: five primary routes in this order — Home, Publications, Research, Education & Honors, Wiki. Education links to `/wiki/education/` and owns its own active state; Wiki excludes publications, research, and education from its active condition.
 Routes/screens:
-- `/`: editorial dossier homepage with masthead, real portrait, verified contact/profile links, compact research/publication index, selected accepted publications, research ledger, position/education, and archive links.
-- `/wiki/publications/`: full publication archive with summary row and flat bibliography sections.
-- `/wiki/research/`: research overview route using research-section/keyword-list patterns where applicable.
-- `/wiki/`: wiki index and related knowledge pages, with compact aside navigation.
+- `/`: compact hero with portrait/contact, selected accepted publications, two research directions, education highlights, and a short archive callout.
+- `/wiki/publications/`: full bibliography/archive using the existing publication include contract.
+- `/wiki/research/`: concise research overview.
+- `/wiki/education/`: education and honors, directly accessible from top navigation.
+- `/wiki/` and child pages: readable dark archive with related wiki navigation.
 
 Content hierarchy:
-1. Identity and research thesis.
-2. Verified contact/profile links.
-3. Compact counts/index from data.
-4. Accepted publications from shared data/include.
-5. Research ledger/pillars.
-6. Position/education and archive routing.
-7. Footer provenance.
+1. Name plus one factual M.S./KAIST/SIML role paragraph, compact portrait, and verified contact/profile links.
+2. Accepted publications from `_data/publications.yml` through the existing include.
+3. Two concise research interests.
+4. Education and honors highlights.
+5. Archive/wiki routing.
 
 ## Design principles
-- Paper and ink over glass and cards: flat surfaces, ruled rows, precise spacing, and near-black text should do the work.
-- Academic restraint over spectacle: one dark-teal signature accent, no decorative noise.
-- Bibliography credibility: papers are indexed rows, not product cards.
-- Status clarity: accepted/under-review labels are visible but small and typographic.
-- Baseurl-safe static output: all internal assets/routes use `relative_url`.
-- Progressive enhancement: HTML works without JavaScript; JS only improves compact navigation.
+- Black canvas first: the site should feel like a quiet academic reading room, not an inverted template.
+- Information over decoration: every visible element must clarify identity, route, paper status, or reading structure.
+- Bibliography as bibliography: publication rows stay flat, typographic, and link-rich; no pseudo-index counters or product cards.
+- System sans discipline: body and headings use sharp local system sans only, because the rejected serif dossier tone is out of scope.
+- Progressive enhancement: navigation and content work without JavaScript; JS only enhances compact menu behavior.
 
 ## Visual language
-Color: near-paper canvas (`#f7f7f2` family), white/ivory paper panels only where needed, strong ink, cool gray metadata, hairline rules, and a limited dark-teal signature accent for links/focus/status. Warm beige, gradients, and soft sand fills are avoided.
-Typography: local distinctive serif stack for masthead and headings (`Charter`, `Iowan Old Style`, `Palatino Linotype`, Georgia, serif); local sans for labels/navigation/body metadata; no external font dependency and no Arial/Inter/Roboto/Space Grotesk defaults.
-Spacing: broad page gutters, a 76rem shell, 46rem prose measure, dense metadata rows, generous section rhythm, and 1px rules.
-Shape/elevation: sharp system with 0–4px radii for controls/media/tables; no decorative shadows; no capsule navigation/frame language.
-Motion: minimal opacity/translate entry and hover/focus transitions only; disabled under `prefers-reduced-motion`.
-Imagery/iconography: use the existing portrait only, displayed as a real archival photo with a sharp border and caption/metadata; no generated imagery or decorative icon systems.
+Color: pure black canvas (`#000000`), off-white text, `#ccc` body copy, `#999` metadata, hairline charcoal rules, and a restrained ice-blue link/focus accent (`#c3d9f3`). No gradients, glow, patterned backgrounds, bright panels, or beige/gray paper fields.
+Typography: system sans for body and headings (`ui-sans-serif`, `-apple-system`, `BlinkMacSystemFont`, `Segoe UI`, `Helvetica Neue`, sans-serif) with natural case, weight contrast, and no external fonts.
+Spacing: compact above the fold so accepted publications begin immediately, generous row rhythm for papers, readable 44–50rem prose, shell width around 76rem, mobile gutters no smaller than 1rem.
+Shape/elevation: square edges, 1px rules, no drop shadows; charcoal surfaces only for mobile menus or table headers when they aid legibility.
+Motion: restrained opacity/translate page entry and link transitions only; disabled under reduced motion.
+Imagery/iconography: use only the existing `assets/profile.jpg`, small and real, optionally grayscale; no new image assets, monogram, abstract mark, automotive stripe, or decorative icon system.
+Reference synthesis: adopt Bugatti-like black discipline only for canvas severity; adopt Mobbin-like natural-case sans spacing and plain links; adopt BMW-like functional hierarchy and clear navigation. Decline literal cloning, licensed/custom fonts, automotive imagery, stripes, chrome pills, and marketing-dashboard layouts.
 
 ## Components
 Existing/new components:
-- Shared default layout (`_layouts/default.html`): SEO head, skip link, sharp global header, active nav underline, breadcrumb, main content shell, compact wiki side index, footer.
-- Homepage (`index.md` + CSS): dossier masthead (without a redundant identity rail), `.identity-meta`, `.profile-links`, `.index-strip`, `.home-section`, accepted publication block, `.research-ledger`, `.timeline-list`, `.archive-callout`.
-- Shared publication include contract: `<ol class="publication-list"><li class="publication-item" data-status="..."><div class="publication-main"><h3 class="publication-title">...` plus `.publication-authors`, `.publication-venue`, and `.publication-links`.
-- Archive/content-lane classes: `.page-intro`, `.page-kicker`, `.publication-summary`, `.section-heading` with `.section-number`, `.conference-list`, `.conference-title`, `.conference-authors`, `.conference-venue`, `.directory-list`, `.directory-index`, `.directory-copy`, `.directory-title`, `.directory-description`, `.directory-arrow`, `.research-section`, `.research-number`, `.research-statement`, `.keyword-list`.
-- Markdown prose: tables, blockquotes, TOC, code, links, headings.
+- Shared default layout: skip link, sticky black header, text-only brand, five-item primary nav, breadcrumb, content shell, wiki aside, footer.
+- Homepage: `.home-hero`, `.home-hero__identity`, `.home-hero__bio`, `.home-portrait`, `.profile-links`, selected publication section, `.research-directions`, `.education-highlights`, `.archive-callout`.
+- Publication include contract preserved exactly in markup expectation: `<ol class="publication-list" role="list"><li class="publication-item" id data-status><div class="publication-main"><h3 class="publication-title">...` with authors/venue/status and `.publication-links`.
+- Archive classes styled globally: `.publication-summary`, `.author-key`, `.archive-jump`, `.conference-list`, `.directory-list`, `.page-intro`, `.page-kicker`, `.section-heading`, `.section-number`, `.research-number`, `.keyword-list`.
 
-Variants/states: active nav, hover/focus-visible, mobile nav expanded/collapsed, accepted/review status labels, external/internal publication links, narrow stacked publication rows.
-Token ownership: `assets/css/site.css` owns color, spacing, type, border, and motion tokens.
+Variants/states: hover, focus-visible, active nav, mobile nav open/closed, accepted/review publication status, narrow publication links, no-JS navigation.
+Token ownership: `assets/css/site.css` owns design tokens, layout, type, rules, and responsive behavior.
 
 ## Accessibility
 Target standard: WCAG 2.1 AA-minded static site.
-Keyboard/focus: visible skip link, focus-visible outlines, button-based mobile nav with `aria-expanded`, nav links reachable in source order.
-Contrast: strong ink on near-paper canvas; dark teal reserved for links/focus and tuned for contrast.
-Semantics: landmark header/main/footer, article wrapping page content, nav labels, breadcrumb nav where relevant, descriptive link labels in content.
-Reduced motion: transition/animation disabled for users who request reduced motion.
-Sensory concerns: no auto-playing media, no large parallax, no flashing.
+Keyboard/focus: visible skip link, focus rings, button-based mobile nav with `aria-expanded`, clear source order, Escape support retained by existing JS.
+Contrast: off-white and muted gray values are tuned for near-black; accent blue is used sparingly and must remain legible.
+Semantics: landmark header/main/footer, `nav` labels, breadcrumb, descriptive publication links, real headings, and list semantics preserved.
+Reduced motion: all animation/transition effects are minimized and disabled under `prefers-reduced-motion`.
+Sensory concerns: no flashing, auto-play, parallax, glow, or busy background texture.
 
 ## Responsive behavior
 Breakpoints/devices:
-- Desktop ≥ 960px: centered shell, horizontal text nav, dossier masthead grid with compact portrait and identity block, publication rows in multi-column index layout, wiki aside as a slim right index.
-- Tablet 720–959px: masthead compresses to two columns then stacks, nav wraps safely, publication links wrap under titles.
-- Mobile < 720px, including 320/390px: compact header, menu button reveals nav, compact masthead with portrait beside the opening description, count strip in two columns, publication rows use full-width titles and unboxed text actions; a compact portrait sits alongside the opening description; tables horizontally scroll, touch targets ≥ 44px where possible.
+- Desktop ≥ 960px: compact header, two-column hero with restrained portrait, full-width flat publication rows, optional wiki aside.
+- Tablet 720–959px: hero remains two-column when possible, metadata stacks, aside moves below content.
+- Mobile < 720px: text-first hero, portrait small, menu button controls nav, publication rows stack, tables scroll horizontally, touch targets remain large enough.
 
-Touch/hover differences: hover accents are decorative only; core state is visible by text, position, and focus styles.
+Touch/hover differences: hover is only an enhancement; route and link meaning remains visible through text, borders, and focus.
 
 ## Interaction states
-Loading: static pages render content-first; subtle page entry only.
-Empty: if publication data/include is unavailable, homepage shows a concise link to the full publication archive instead of failing.
-Error: no custom error surface in scope.
-Success: active navigation and status labels confirm current location/content status.
-Disabled: no disabled controls in current scope.
-Offline/slow network: local CSS/JS/image only; no external font or CDN dependency.
+Loading: static content-first render; optional minimal page entry.
+Empty: homepage publication block falls back to the archive link if data is unavailable.
+Error: no custom error route in scope.
+Success: active nav state and publication status communicate current location and publication state.
+Disabled: no disabled controls in scope.
+Offline/slow network: local CSS, JS, portrait, and PDFs only; no CDN/font dependency.
 
 ## Content voice
-Tone: concise, factual, academically confident, no hype.
-Terminology: use “accepted,” “under review,” “to appear,” “Trustworthy AI,” “generative-model safety,” and “uncertainty-aware clinical AI” consistently.
-Microcopy rules: avoid unverifiable claims, avoid counts that can drift unless Liquid/data owns them, and prefer project/archive links over duplicating long wiki content.
+Tone: concise, factual, academic, restrained.
+Terminology: KAIST AI, Trustworthy AI, generative-model safety, LLM safety auditing, uncertainty-aware clinical AI, accepted, under review, to appear.
+Microcopy rules: no motivational filler, no invented counts, no repeated generic AI prose, no visible non-English metadata in owned layout/homepage surfaces.
 
 ## Implementation constraints
-Framework/styling: Jekyll 4.3 with `just-the-docs` gem installed by Gemfile; local `_layouts/default.html` overrides the theme layout; no package.json/frontend framework and no new dependencies.
-Tokens/performance: one local CSS file and one tiny local JS file; use system-available serif/sans stacks, no external webfont.
-Compatibility: GitHub Pages baseurl via `relative_url`, `jekyll-seo-tag` via `{% seo %}`, content markdown preserved.
-Test/screenshot expectations: no build/publish during the design-worker integration slice; main/test lanes own Jekyll build, screenshots, visual-verdict loop, functional checks, commit, and deploy.
+Framework/styling: Jekyll 4.3 with `just-the-docs`; no `package.json` frontend framework; `_layouts/default.html` overrides theme layout; `assets/css/site.css` is a lean single-file redesign.
+Tokens/performance: no new dependencies, no external fonts, no new images, preserve existing portrait pixels and publication paths.
+Compatibility: use `relative_url` for internal routes/assets, preserve `data-nav-toggle`, `#site-nav`, and `data-site-nav` contracts.
+Test/screenshot expectations: run a local Jekyll build and inspect generated HTML for nav, publication links, and unintended non-English owned metadata. Main lane owns screenshots, visual verdict, deploy, and commits.
 
 ## Open questions
-- No CV PDF is linked because no verified current CV was provided; the profile and education pages remain available.
-- [x] Publication links verified against OpenReview and the publisher DOI; EBSG camera-ready is self-hosted with a matching source checksum. ASCG anonymous review PDF and Placement submission PDF are intentionally not hosted.
-- [ ] Site owner: decide whether to preserve just-the-docs built-in search in a future iteration; impact is wiki discoverability, but not required for this redesign slice.
-
-## Verification record
-- Editorial revision independently reviewed against the previous deployed baseline and this brief.
-- All 14 public routes checked at 320, 390, 768, and 1440px; zero viewport overflows, failed local assets, broken images, or JavaScript errors.
-- Twelve static regressions cover route inventory, metadata, fragments, publication facts, conference presentations, PDF identity, and private-file exclusion.
-- Keyboard/skip links, closed-menu focus, Escape focus restoration, sticky-header anchor clearance, table scroll reachability, no-JavaScript navigation, and reduced motion checked.
-- Full assistive-technology certification is not claimed. Existing unrelated local edits remain outside the deployment.
+- [ ] Site owner: decide later whether wiki pages should be content-edited to remove bilingual source notes; outside this design lane's four-file ownership.
+- [ ] Main verifier: confirm screenshots across all routes after integration with the translation/config/test lanes.

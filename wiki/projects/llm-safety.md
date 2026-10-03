@@ -46,12 +46,16 @@ and concept removal (ties back to [ASCG]({{ '/wiki/projects/ascg/' | relative_ur
 by **linguistic phenomena like negation**. This work maps those failure surfaces so they
 can be fixed.
 
-## STAR seed
+<details markdown="1">
+<summary>Writing notes</summary>
+
 - **S:** Open-source LLMs are called "safe," but safety is uneven.
 - **T:** Find *where* and *why* it breaks.
 - **A:** Systematic audits across 6 open-source LLMs — across languages, reasoning depth,
   and negation.
 - **R:** Three findings (cross-lingual asymmetry, reasoning-induced erosion, negation
   failure): one paper accepted at ETRI Journal and two under review.
-- **Says about me:** I think like a *red-teamer for trust* — I find the cracks before
+- **Emphasis:** I think like a *red-teamer for trust* — I find the cracks before
   deployment does.
+
+</details>

@@ -2,11 +2,9 @@
 title: Publications
 layout: default
 parent: Wiki
-nav_order: 6
+nav_order: 4
 permalink: /wiki/publications/
 ---
-
-<p class="page-kicker">Research record</p>
 
 # Publications
 {: .no_toc }
@@ -30,29 +28,20 @@ permalink: /wiki/publications/
   <a href="#conference-presentations">Presentations</a>
 </nav>
 
-<div class="section-heading">
-  <span class="section-number" aria-hidden="true">01 /</span>
-  <h2 id="accepted-papers">Accepted papers</h2>
-</div>
+<h2 id="accepted-papers">Accepted papers</h2>
 
 {% include publication-list.html publications=accepted_papers %}
 
-<div class="section-heading">
-  <span class="section-number" aria-hidden="true">02 /</span>
-  <h2 id="under-review">Under review</h2>
-</div>
+<h2 id="under-review">Under review</h2>
 
 {% include publication-list.html publications=review_papers %}
 
-<div class="section-heading">
-  <span class="section-number" aria-hidden="true">03 /</span>
-  <h2 id="conference-presentations">Conference presentations</h2>
-</div>
+<h2 id="conference-presentations">Conference presentations</h2>
 
-<p class="page-kicker">International · IOCDT 2026 · Online · 7–9 October 2026</p>
+### International · IOCDT 2026 · Online · 7–9 October 2026
 {% include conference-posters.html %}
 
-<p class="page-kicker">International · HealthAI 2026 · Prague</p>
+### International · HealthAI 2026 · Prague
 <ol class="conference-list" role="list">
   <li>
     <h3 class="conference-title">DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction Under Sparse Clinical Observations.</h3>
@@ -67,7 +56,7 @@ permalink: /wiki/publications/
   </li>
 </ol>
 
-<p class="page-kicker">Domestic · KIIE</p>
+### Domestic · KIIE
 <ol class="conference-list" role="list">
   <li>
     <h3 class="conference-title">Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical Informatics Framework.</h3>

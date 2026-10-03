@@ -2,11 +2,9 @@
 title: Research Overview
 layout: default
 parent: Wiki
-nav_order: 5
+nav_order: 3
 permalink: /wiki/research/
 ---
-
-<p class="page-kicker">Research / two directions</p>
 
 # Research Overview
 
@@ -15,8 +13,6 @@ permalink: /wiki/research/
 I study this question through two complementary research directions: safer generation and more reliable clinical predictions.
 
 ## Research directions
-
-<p class="research-number">01 / Safety</p>
 
 ### Generative-model safety
 Making powerful generators refuse harm *without* breaking benign use.
@@ -31,8 +27,6 @@ Making powerful generators refuse harm *without* breaking benign use.
 - **LLM safety auditing.** Cross-lingual safety asymmetry (safety holds in English but
   leaks elsewhere), reasoning-induced safety erosion, and why diffusion models
   misunderstand negation — auditing 6 open-source LLMs.
-
-<p class="research-number">02 / Reliability</p>
 
 ### Uncertainty-aware clinical AI
 Medical models that quantify confidence and defer when unsure.

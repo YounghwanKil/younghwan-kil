@@ -55,7 +55,9 @@ binary detectors**. ASCG gates classifier guidance on Grad-CAM evidence; EBSG re
 guidance signal with **editable exemplar packs** that decompose broad concepts into
 steerable sub-concepts — a more granular, user-controllable, and transferable design.
 
-## STAR seed (for 자소서 / interview)
+<details markdown="1">
+<summary>Writing notes</summary>
+
 - **Situation:** T2I safety methods are monolithic and coarse; models collapse to bypass
   binary safety checks.
 - **Task:** Erase unsafe concepts *precisely* — per sub-concept, without retraining, and
@@ -65,5 +67,7 @@ steerable sub-concepts — a more granular, user-controllable, and transferable 
   validated across nudity / I2P / MJA benchmarks and transferred to SD3 and FLUX.1.
 - **Result:** SOTA erasure across 15 benchmark slices, multi-concept support, SD3 & FLUX.1 transfer;
   accepted to **NeurIPS 2026** (first author, with Jinwoo Shin & Juho Lee).
-- **Says about me:** I push a research line from workshop (ASCG) to a top-venue acceptance
+- **Emphasis:** I push a research line from workshop (ASCG) to a top-venue acceptance
   (NeurIPS), and I insist that *evaluation* be as rigorous as the method.
+
+</details>
