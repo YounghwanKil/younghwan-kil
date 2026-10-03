@@ -16,7 +16,7 @@ permalink: /wiki/profile/
 
 ## Snapshot
 
-| | |
+| Attribute | Details |
 |---|---|
 | **Name** | Younghwan Kil · 길영환 |
 | **Role** | M.S. student & graduate researcher, KAIST Kim Jaechul Graduate School of AI |

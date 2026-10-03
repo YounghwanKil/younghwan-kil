@@ -6,13 +6,19 @@ nav_order: 5
 permalink: /wiki/research/
 ---
 
+<p class="page-kicker">Research / two directions</p>
+
 # Research Overview
 
-My research asks one question in two forms: **can we trust this model when it acts?**
+<p class="page-intro">Can we trust this model when it acts?</p>
 
-## Two pillars
+I study this question through two complementary research directions: safer generation and more reliable clinical predictions.
 
-### 1. Generative-model safety
+## Research directions
+
+<p class="research-number">01 / Safety</p>
+
+### Generative-model safety
 Making powerful generators refuse harm *without* breaking benign use.
 
 - **Diffusion safety — training-free concept erasure (EBSG → NeurIPS 2026, ASCG →
@@ -26,7 +32,9 @@ Making powerful generators refuse harm *without* breaking benign use.
   leaks elsewhere), reasoning-induced safety erosion, and why diffusion models
   misunderstand negation — auditing 6 open-source LLMs.
 
-### 2. Uncertainty-aware clinical AI
+<p class="research-number">02 / Reliability</p>
+
+### Uncertainty-aware clinical AI
 Medical models that quantify confidence and defer when unsure.
 
 - **Attention over sparse clinical time series (DATAN → HealthAI 2026; Set-Based Temporal

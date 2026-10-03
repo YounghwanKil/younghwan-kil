@@ -6,47 +6,82 @@ nav_order: 6
 permalink: /wiki/publications/
 ---
 
+<p class="page-kicker">Research record</p>
+
 # Publications
 {: .no_toc }
 
 {% assign accepted_papers = site.data.publications | where: "status", "accepted" %}
 {% assign review_papers = site.data.publications | where: "status", "review" %}
 
-{{ site.data.publications.size }} papers · {{ accepted_papers.size }} accepted · {{ review_papers.size }} under review.<br>
-Plus 5 conference presentations: 2 international posters and 3 domestic talks.
+<p class="page-intro">Work on generative-model safety, dependable clinical AI, and efficient learning.</p>
 
-**Younghwan Kil** is highlighted in author lists. `†` = corresponding author · `*` = equal contribution.
-{% if site.openreview_url %}
-[OpenReview profile]({{ site.openreview_url }})
-{% endif %}
+<div class="publication-summary">
+  <span><strong>{{ site.data.publications.size }} papers</strong> / {{ accepted_papers.size }} accepted · {{ review_papers.size }} under review</span>
+  <span>5 conference presentations</span>
+  {% if site.openreview_url %}<a href="{{ site.openreview_url }}">OpenReview profile <span aria-hidden="true">↗</span></a>{% endif %}
+</div>
 
-## Accepted papers
+<p class="author-key"><strong>My name</strong> is highlighted. † Corresponding author · * Equal contribution.</p>
+
+<nav class="archive-jump" aria-label="Publication sections">
+  <a href="#accepted-papers">Accepted</a>
+  <a href="#under-review">Under review</a>
+  <a href="#conference-presentations">Presentations</a>
+</nav>
+
+<div class="section-heading">
+  <span class="section-number" aria-hidden="true">01 /</span>
+  <h2 id="accepted-papers">Accepted papers</h2>
+</div>
 
 {% include publication-list.html publications=accepted_papers %}
 
-## Under review
+<div class="section-heading">
+  <span class="section-number" aria-hidden="true">02 /</span>
+  <h2 id="under-review">Under review</h2>
+</div>
 
 {% include publication-list.html publications=review_papers %}
 
-## Conference presentations — international (HealthAI 2026, Prague)
+<div class="section-heading">
+  <span class="section-number" aria-hidden="true">03 /</span>
+  <h2 id="conference-presentations">Conference presentations</h2>
+</div>
 
-7. **DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction
-   Under Sparse Clinical Observations.** HealthAI 2026 — poster (accepted). *Y. Kil\*,
-   S. K. Kim\*, S. Kim, Y. Kim, S. Yang, G. Manalu.* — co-first author.
-   → [project]({{ '/wiki/projects/datan/' | relative_url }})
-8. **Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2
-   Diabetes Detection.** HealthAI 2026 — poster (accepted). *Y. Kil.* — sole author.
+<p class="page-kicker">International · HealthAI 2026 · Prague</p>
+<ol class="conference-list" role="list">
+  <li>
+    <h3 class="conference-title">DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction Under Sparse Clinical Observations.</h3>
+    <p class="conference-authors"><strong>Younghwan Kil*</strong>, S. K. Kim*, S. Kim, Y. Kim, S. Yang, G. Manalu.</p>
+    <p class="conference-venue">HealthAI 2026 · Poster (accepted) · Co-first author.</p>
+    <a class="text-link" href="{{ '/wiki/projects/datan/' | relative_url }}">Project <span aria-hidden="true">↗</span></a>
+  </li>
+  <li>
+    <h3 class="conference-title">Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2 Diabetes Detection.</h3>
+    <p class="conference-authors"><strong>Younghwan Kil</strong>.</p>
+    <p class="conference-venue">HealthAI 2026 · Poster (accepted) · Sole author.</p>
+  </li>
+</ol>
 
-## Conference presentations — domestic (KIIE)
-
-9. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
-   Informatics Framework.** KIIE conference presentation, 2025. *Y. Kil, N. Kil†.*
-10. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
-    conference presentation, 2024. *Y. Kil, S. Chae†.*
-11. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE conference
-    presentation, 2024. *Y. Kil, S. Chae†.*
-
----
+<p class="page-kicker">Domestic · KIIE</p>
+<ol class="conference-list" role="list">
+  <li>
+    <h3 class="conference-title">Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical Informatics Framework.</h3>
+    <p class="conference-authors"><strong>Younghwan Kil</strong>, N. Kil†.</p>
+    <p class="conference-venue">KIIE conference presentation · 2025.</p>
+  </li>
+  <li>
+    <h3 class="conference-title">Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.</h3>
+    <p class="conference-authors"><strong>Younghwan Kil</strong>, S. Chae†.</p>
+    <p class="conference-venue">KIIE conference presentation · 2024.</p>
+  </li>
+  <li>
+    <h3 class="conference-title">Optimization of Sequential Agent Order in Competitive Systems.</h3>
+    <p class="conference-authors"><strong>Younghwan Kil</strong>, S. Chae†.</p>
+    <p class="conference-venue">KIIE conference presentation · 2024.</p>
+  </li>
+</ol>
 
 ## By theme
 

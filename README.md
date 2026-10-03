@@ -26,8 +26,22 @@ bundle exec jekyll serve
 # http://localhost:4000/younghwan-kil/
 ```
 
-The regression checks cover paper status/author metadata, shared homepage data,
-verified links, the camera-ready checksum, local routes, and private-file exclusions.
+The regression checks cover all 14 public routes, document metadata, internal
+fragment links, paper/author metadata, shared homepage data, the camera-ready
+checksum, and private-file exclusions.
+
+For the full responsive/interaction audit, use the existing Python Playwright
+tooling in your development environment (not a runtime website dependency):
+
+```sh
+python3 tests/browser_smoke.py
+```
+
+The browser audit starts an isolated localhost preview automatically, checks every
+route at 320/390/768/1440px, and exercises keyboard navigation, tables, no-JavaScript
+fallbacks, and reduced motion. Screenshots and JSON evidence are kept outside the
+published site under `.omx/artifacts/editorial-v2/`. `SITE_DIR`, `BASE_URL`, and
+`ARTIFACT_DIR` can select an explicit build, running preview, or evidence directory.
 When intentionally updating publication facts or replacing a verified PDF, update
 those corresponding assertions too. No frontend build or external webfont is required.
 
