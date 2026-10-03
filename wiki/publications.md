@@ -9,61 +9,49 @@ permalink: /wiki/publications/
 # Publications
 {: .no_toc }
 
-5 papers (1 accepted · 4 under review) + 5 conference presentations (2 international posters · 3 domestic talks).
-`†` = corresponding author · `*` = equal contribution. Most work is first-authored.
+{% assign accepted_papers = site.data.publications | where: "status", "accepted" %}
+{% assign review_papers = site.data.publications | where: "status", "review" %}
 
-- TOC
-{:toc}
+{{ site.data.publications.size }} papers · {{ accepted_papers.size }} accepted · {{ review_papers.size }} under review.<br>
+Plus 5 conference presentations: 2 international posters and 3 domestic talks.
 
----
+**Younghwan Kil** is highlighted in author lists. `†` = corresponding author · `*` = equal contribution.
+{% if site.openreview_url %}
+[OpenReview profile]({{ site.openreview_url }})
+{% endif %}
 
-## Papers — accepted
+## Accepted papers
 
-1. **ASCG: Adaptive Spatial Classifier Guidance for Surgical Concept Suppression in
-   Diffusion Models.** CVPR Workshop on Safe and Trustworthy Foundation Models (SAFE),
-   2026. *Y. Kil, J. Park, G. Nam, J. Lee†.* — first author.
-   → [project]({{ '/wiki/projects/ascg/' \| relative_url }})
+{% include publication-list.html publications=accepted_papers %}
 
-## Papers — under review
+## Under review
 
-2. **Example-Based Spatial Guidance for Training-Free Concept Erasure in Diffusion
-   Models (EBSG).** **NeurIPS 2026 Conference** — under review (Submission #35988).
-   *Y. Kil, J. Park, G. Nam, J. Shin, J. Lee.* — first author.
-   → [project]({{ '/wiki/projects/ebsg/' \| relative_url }})
-3. **Cross-Lingual Safety Asymmetry in Open-Source LLMs.** SCIE Journal, Special Issue on
-   Trustworthy and Safe AI — **minor revision**. *S. Chae, Y. Kil†.* — corresponding author.
-   → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
-4. **Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation.** SCIE
-   Journal, Special Issue on Trustworthy and Safe AI — **major revision**. *S. Chae, Y. Kil†.*
-   — corresponding author. → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
-5. **Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source
-   Reasoning Models.** SCIE Journal, Special Issue on Trustworthy and Safe AI —
-   **major revision**. *Y. Kil, S. Chae†.* — first author.
-   → [project]({{ '/wiki/projects/llm-safety/' \| relative_url }})
+{% include publication-list.html publications=review_papers %}
 
 ## Conference presentations — international (HealthAI 2026, Prague)
 
-6. **DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction
+7. **DATAN: Diffusion-Augmented Temporal Attention Network for ICU Mortality Prediction
    Under Sparse Clinical Observations.** HealthAI 2026 — poster (accepted). *Y. Kil\*,
    S. K. Kim\*, S. Kim, Y. Kim, S. Yang, G. Manalu.* — co-first author.
-   → [project]({{ '/wiki/projects/datan/' \| relative_url }})
-7. **Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2
+   → [project]({{ '/wiki/projects/datan/' | relative_url }})
+8. **Uncertainty-Aware Deep Feature Interaction Attention Network for Reliable Type 2
    Diabetes Detection.** HealthAI 2026 — poster (accepted). *Y. Kil.* — sole author.
 
 ## Conference presentations — domestic (KIIE)
 
-8. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
+9. **Set-Based Temporal Attention Networks for Clinical Time Series: A Clinical
    Informatics Framework.** KIIE conference presentation, 2025. *Y. Kil, N. Kil†.*
-9. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
-   conference presentation, 2024. *Y. Kil, S. Chae†.*
-10. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE conference
+10. **Time-Dependent Queuing Distribution for Resilient Capacity Arrangement.** KIIE
+    conference presentation, 2024. *Y. Kil, S. Chae†.*
+11. **Optimization of Sequential Agent Order in Competitive Systems.** KIIE conference
     presentation, 2024. *Y. Kil, S. Chae†.*
 
 ---
 
 ## By theme
 
-- **Generative-model / diffusion safety:** 1 (ASCG), 2 (EBSG, NeurIPS 2026), 4 (negation)
-- **LLM safety auditing:** 3 (cross-lingual), 5 (reasoning erosion)
-- **Uncertainty-aware clinical AI:** 6 (DATAN), 7 (T2D), 8 (set-based temporal)
-- **Industrial-engineering / OR roots:** 9 (queuing), 10 (sequential agents)
+- **Generative-model / diffusion safety:** ASCG, EBSG (NeurIPS 2026), Forbidden Fruit in Latent Space
+- **LLM safety auditing:** Cross-lingual safety asymmetry, Reasoning Reshapes Safety Profiles
+- **Efficient learning with physical nonlinearities:** Placement over Device Diversity
+- **Uncertainty-aware clinical AI:** DATAN, T2D detection, set-based temporal attention
+- **Industrial-engineering / OR roots:** queuing, sequential agents

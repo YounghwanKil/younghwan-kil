@@ -32,7 +32,7 @@ about what you value:
 3. **Honesty about uncertainty.** Evidential DL, conformal prediction, MC-Dropout — you
    repeatedly build models that admit what they don't know. In medicine especially, a
    model that defers is safer than a confident wrong one.
-4. **Rigor and follow-through.** *Summa Cum Laude*, 5 international papers and 5 conference presentations, tens of thousands of
+4. **Rigor and follow-through.** *Summa Cum Laude*, 6 papers/manuscripts and 5 conference presentations, tens of thousands of
    evaluated samples. You finish things and you verify them.
 5. **Giving knowledge back.** Four semesters tutoring physics; a wiki like this one.
    You care about making hard things understandable.
@@ -77,5 +77,5 @@ about what you value:
 ---
 
 *Once these are filled, the [자소서 drafting step] can weave them with the concrete
-evidence from [Projects]({{ '/wiki/projects/' \| relative_url }}) and
-[Publications]({{ '/wiki/publications/' \| relative_url }}).*
+evidence from [Projects]({{ '/wiki/projects/' | relative_url }}) and
+[Publications]({{ '/wiki/publications/' | relative_url }}).*

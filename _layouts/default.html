@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Younghwan Kil home">
+          <span class="site-brand__name">Younghwan Kil</span>
+          <span class="site-brand__hangul">길영환</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__text">Menu</span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+          <a class="site-nav__link{% if page.url == '/' %} is-active{% endif %}"{% if page.url == '/' %} aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+          <a class="site-nav__link{% if page.url contains '/wiki/publications/' %} is-active{% endif %}"{% if page.url contains '/wiki/publications/' %} aria-current="page"{% endif %} href="{{ '/wiki/publications/' | relative_url }}">Publications</a>
+          <a class="site-nav__link{% if page.url contains '/wiki/research/' %} is-active{% endif %}"{% if page.url contains '/wiki/research/' %} aria-current="page"{% endif %} href="{{ '/wiki/research/' | relative_url }}">Research</a>
+          <a class="site-nav__link{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' %} is-active{% endif %}"{% if page.url contains '/wiki/' and page.url != '/wiki/publications/' and page.url != '/wiki/research/' %} aria-current="page"{% endif %} href="{{ '/wiki/' | relative_url }}">Wiki</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell{% if page.url == '/' %} page-shell--home{% endif %}{% if page.url == '/wiki/publications/' %} page-shell--publications{% endif %}" id="main-content" tabindex="-1">
+      {% unless page.url == '/' %}
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            {% if page.url contains '/wiki/' and page.url != '/wiki/' %}
+              <li><a href="{{ '/wiki/' | relative_url }}">Wiki</a></li>
+              {% if page.parent == 'Projects' %}
+                <li><a href="{{ '/wiki/projects/' | relative_url }}">Projects</a></li>
+              {% endif %}
+            {% endif %}
+            <li aria-current="page">{{ page.title | default: site.title }}</li>
+          </ol>
+        </nav>
+      {% endunless %}
+
+      <div class="content-grid">
+        <article class="page-content">
+          {{ content }}
+        </article>
+
+        {% if page.url contains '/wiki/' %}
+          <aside class="wiki-aside" aria-label="Related wiki navigation">
+            <p class="wiki-aside__eyebrow">Wiki</p>
+            <nav class="wiki-aside__nav">
+              {% assign wiki_pages = site.pages | where_exp: 'item', 'item.url contains "/wiki/"' | sort: 'nav_order' %}
+              {% for item in wiki_pages %}
+                {% unless item.url contains '/wiki/projects/' and item.url != '/wiki/projects/' %}
+                  <a class="wiki-aside__link{% if item.url == page.url %} is-current{% endif %}" href="{{ item.url | relative_url }}">
+                    {{ item.title | default: item.name }}
+                  </a>
+                {% endunless %}
+              {% endfor %}
+            </nav>
+          </aside>
+        {% endif %}
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Younghwan Kil · <a href="mailto:yhgil99@snu.ac.kr">yhgil99@snu.ac.kr</a></p>
+        <p>Trustworthy AI · Generative-model safety · Uncertainty-aware clinical AI</p>
+      </div>
+    </footer>
+
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  </body>
+</html>

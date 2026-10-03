@@ -1,0 +1,96 @@
+- id: ebsg
+  title: "Example-Based Spatial Guidance for Training-Free Concept Erasure in Diffusion Models"
+  short_title: EBSG
+  status: accepted
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: Joonhyeong Park
+    - name: Giung Nam
+    - name: Jinwoo Shin
+    - name: Juho Lee
+  role: First author
+  venue: Conference on Neural Information Processing Systems
+  venue_short: NeurIPS 2026
+  note: To appear
+  links:
+    - label: PDF · Camera-ready
+      url: /assets/papers/ebsg-neurips-2026-camera-ready.pdf
+    - label: OpenReview
+      url: https://openreview.net/forum?id=kCWbL63oQy
+    - label: Project
+      url: /wiki/projects/ebsg/
+
+- id: ascg
+  title: "ASCG: Adaptive Spatial Classifier Guidance for Surgical Concept Suppression in Diffusion Models"
+  status: accepted
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: Joonhyeong Park
+    - name: Giung Nam
+    - name: Juho Lee
+      marker: "†"
+  role: First author
+  venue: Second Edition of Workshop on Synthetic & Adversarial ForEnsics
+  venue_short: SAFE@CVPR 2026
+  links:
+    - label: OpenReview
+      url: https://openreview.net/forum?id=S9HxdLOgqt
+    - label: Workshop
+      url: https://www.safeworkshop.org/cvpr-2026/
+    - label: Project
+      url: /wiki/projects/ascg/
+
+- id: cross-lingual
+  title: "Cross-lingual safety asymmetry in open-weight LLMs"
+  status: accepted
+  authors:
+    - name: Sungwon Chae
+    - name: Younghwan Gil
+      self: true
+      marker: "†"
+  role: Corresponding author
+  venue: ETRI Journal
+  note: Early View · Published as Younghwan Gil
+  links:
+    - label: DOI / Journal
+      url: https://doi.org/10.4218/etrij.2026-0180
+    - label: Project
+      url: /wiki/projects/llm-safety/
+
+- id: forbidden-fruit
+  title: "Forbidden Fruit in Latent Space: Why Diffusion Models Misunderstand Negation"
+  status: review
+  authors:
+    - name: S. Chae
+    - name: Younghwan Kil
+      self: true
+      marker: "†"
+  role: Corresponding author
+  links:
+    - label: Project
+      url: /wiki/projects/llm-safety/
+
+- id: reasoning-safety
+  title: "Reasoning Reshapes Safety Profiles: Safety Alignment Erosion in Open-Source Reasoning Models"
+  status: review
+  authors:
+    - name: Younghwan Kil
+      self: true
+    - name: S. Chae
+      marker: "†"
+  role: First author
+  links:
+    - label: Project
+      url: /wiki/projects/llm-safety/
+
+- id: placement
+  title: "Placement over Device Diversity: Efficient Learning with Fixed Physical Nonlinearities"
+  status: review
+  authors:
+    - name: Songhyun Kim
+    - name: Deukhwan Cho
+    - name: Younghwan Kil
+      self: true
+    - name: Seunghyup Yoo

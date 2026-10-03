@@ -10,9 +10,11 @@ permalink: /wiki/projects/ascg/
 # ASCG — Adaptive Spatial Classifier Guidance for Diffusion Models
 {: .no_toc }
 
-> **Venue:** CVPR Workshop on Safe and Trustworthy Foundation Models (SAFE) 2026 — **accepted**.
-> **Authors:** Y. Kil, J. Park, G. Nam, J. Lee†.
+> **Venue:** Second Edition of Workshop on Synthetic & Adversarial ForEnsics (SAFE@CVPR 2026) — **accepted**.
+> **Authors:** Younghwan Kil, Joonhyeong Park, Giung Nam, Juho Lee†.
 > **Stack:** Python · PyTorch · diffusers · Grad-CAM · Stable Diffusion 1.4 · Qwen3-VL (evaluation).
+
+[OpenReview](https://openreview.net/forum?id=S9HxdLOgqt) · [SAFE@CVPR](https://www.safeworkshop.org/cvpr-2026/)
 
 - TOC
 {:toc}

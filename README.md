@@ -1,44 +1,48 @@
-# younghwan-kil
+# Younghwan Kil — academic website
 
-A personal **living wiki** (Karpathy-style) about Younghwan Kil (길영환) — ML researcher
-in Trustworthy AI. Built with Jekyll + [just-the-docs](https://just-the-docs.com/) and
-served via GitHub Pages.
-
-**Purpose:** a single, durable source of truth about who I am, my research, and my
-motivations — used to draft CVs, cover letters (자기소개서), and research statements.
+A personal academic homepage and research wiki, built with Jekyll and published at
+[younghwankil.github.io/younghwan-kil](https://younghwankil.github.io/younghwan-kil/).
 
 ## Structure
 
-```
-index.md            # landing / about
-wiki/               # the knowledge base
-  index.md          #   wiki table of contents
-  profile.md        #   biography & background
-  timeline.md       #   career timeline
-  education.md      #   education & honors
-  values.md         #   values & motivation (자소서 core)
-  research.md       #   research overview & themes
-  publications.md   #   full publication list
-  skills.md         #   technical skills
-  projects/         #   one page per project
-assets/             # images (profile, etc.)
-```
+- `index.md`: academic homepage and selected accepted publications.
+- `_data/publications.yml`: shared paper titles, authors, statuses, venues, and verified links.
+- `_includes/publication-list.html`: publication rendering used by the homepage and archive.
+- `_layouts/default.html`: responsive shared navigation and page layout.
+- `assets/css/site.css`, `assets/js/site.js`: design tokens/styles and progressive mobile navigation.
+- `assets/papers/`: verified, author-owned camera-ready PDFs only.
+- `wiki/`: full publication archive, projects, profile, research, education, and notes.
+- `DESIGN.md`: maintained design contract.
 
-## Local preview
+## Preview and verify
 
-```bash
+With Ruby, its development headers, and Bundler installed:
+
+```sh
 bundle install
+bundle exec jekyll build
+python3 -m unittest discover -s tests -v
 bundle exec jekyll serve
 # http://localhost:4000/younghwan-kil/
 ```
 
+The regression checks cover paper status/author metadata, shared homepage data,
+verified links, the camera-ready checksum, local routes, and private-file exclusions.
+When intentionally updating publication facts or replacing a verified PDF, update
+those corresponding assertions too. No frontend build or external webfont is required.
+
 ## Deploy
 
-Push to `main`; GitHub Pages (Settings → Pages → Deploy from branch `main` `/`) builds
-and publishes to `https://younghwankil.github.io/younghwan-kil/`.
+Pushing to `main` triggers `.github/workflows/pages.yml`: build with Jekyll, run
+regression checks, and deploy the artifact to GitHub Pages.
 
-## Maintenance
+## Publication integrity
 
-This wiki is meant to **grow**. When something new happens (a paper, a project, a
-lesson learned), add or extend a page rather than starting over. Keep claims
-evidence-backed — supporting documents live outside this repo.
+Use canonical author lists and metadata from OpenReview, the published paper, or the
+publisher. Keep accepted papers separate from manuscripts under review; do not carry
+old submission venues into a new generic under-review entry. Do not invent links.
+Only host a PDF after confirming it is the intended public final version; anonymous
+review copies and PDFs marked “Do not distribute” are not camera-ready artifacts.
+
+Private credential documents and local workflow artifacts are explicitly excluded
+from the Jekyll output. Never stage them for Git.

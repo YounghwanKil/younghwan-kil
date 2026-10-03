@@ -1,9 +1,9 @@
 title: Younghwan Kil (길영환)
 description: >-
-  Personal knowledge wiki of Younghwan Kil — ML researcher in Trustworthy AI
-  (generative-model safety & uncertainty-aware clinical AI). A Karpathy-style,
-  ever-growing knowledge base about who I am, what I've built, and why.
+  Younghwan Kil — M.S. student and researcher at KAIST AI. Research in
+  trustworthy AI, generative-model safety, and uncertainty-aware clinical AI.
 author: Younghwan Kil
+openreview_url: "https://openreview.net/profile?id=~Younghwan_Kil1"
 lang: en
 
 # --- theme (installed as a gem; see Gemfile) ---
@@ -38,3 +38,9 @@ exclude:
   - Gemfile.lock
   - vendor
   - README.md
+  - DESIGN.md
+  - credentials
+  - .omx
+  - .omc
+  - tests
+  - scripts

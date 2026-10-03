@@ -10,9 +10,11 @@ permalink: /wiki/projects/ebsg/
 # EBSG — Example-Based Spatial Guidance for Training-Free Concept Erasure
 {: .no_toc }
 
-> **Venue:** NeurIPS 2026 Conference — **submission under review** (Submission #35988, May 2026).
+> **Venue:** NeurIPS 2026 Conference — **accepted**.
 > **Authors:** Younghwan Kil, Joonhyeong Park, Giung Nam, Jinwoo Shin, Juho Lee.
 > **Primary area:** Socio-technical aspects of AI (safety). **Secondary:** Computer vision.
+
+[PDF · Camera-ready]({{ '/assets/papers/ebsg-neurips-2026-camera-ready.pdf' | relative_url }}) · [OpenReview](https://openreview.net/forum?id=kCWbL63oQy)
 
 - TOC
 {:toc}
@@ -62,6 +64,6 @@ steerable sub-concepts — a more granular, user-controllable, and transferable 
   into localized sub-concepts; built a VLM-based fine-grained evaluation protocol;
   validated across nudity / I2P / MJA benchmarks and transferred to SD3 and FLUX.1.
 - **Result:** SOTA erasure across 15 benchmark slices, multi-concept support, SD3 & FLUX.1 transfer;
-  submitted to **NeurIPS 2026** (first author, with Jinwoo Shin & Juho Lee).
-- **Says about me:** I push a research line from workshop (ASCG) to a top-venue submission
+  accepted to **NeurIPS 2026** (first author, with Jinwoo Shin & Juho Lee).
+- **Says about me:** I push a research line from workshop (ASCG) to a top-venue acceptance
   (NeurIPS), and I insist that *evaluation* be as rigorous as the method.

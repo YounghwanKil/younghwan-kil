@@ -15,7 +15,7 @@ for interviews and 자소서.
 
 | Project | One line | Status |
 |---------|----------|--------|
-| [EBSG]({{ '/wiki/projects/ebsg/' \| relative_url }}) | Training-free exemplar-guided concept erasure for diffusion | **NeurIPS 2026** (under review) |
-| [ASCG]({{ '/wiki/projects/ascg/' \| relative_url }}) | Grad-CAM-gated safety guidance for diffusion | CVPR-W SAFE 2026 ✅ |
-| [DATAN]({{ '/wiki/projects/datan/' \| relative_url }}) | Diffusion-augmented ICU mortality prediction | HealthAI 2026 ✅ |
-| [LLM Safety Auditing]({{ '/wiki/projects/llm-safety/' \| relative_url }}) | Cross-lingual asymmetry, reasoning erosion, negation | In revision (SCIE) |
+| [EBSG]({{ '/wiki/projects/ebsg/' | relative_url }}) | Training-free exemplar-guided concept erasure for diffusion | **NeurIPS 2026** (accepted) |
+| [ASCG]({{ '/wiki/projects/ascg/' | relative_url }}) | Grad-CAM-gated safety guidance for diffusion | CVPR-W SAFE 2026 ✅ |
+| [DATAN]({{ '/wiki/projects/datan/' | relative_url }}) | Diffusion-augmented ICU mortality prediction | HealthAI 2026 ✅ |
+| [LLM Safety Auditing]({{ '/wiki/projects/llm-safety/' | relative_url }}) | Cross-lingual asymmetry, reasoning erosion, negation | 1 accepted (ETRI Journal) · 2 under review |

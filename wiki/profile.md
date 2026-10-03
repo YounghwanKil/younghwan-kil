@@ -44,9 +44,9 @@ Industrial Engineering and Computer Science at Seoul National University** — p
 systems/optimization foundation with a full CS core — where he graduated *Summa Cum
 Laude* (GPA 4.00/4.30), and
 now works across diffusion models, LLM alignment auditing, evidential/conformal
-uncertainty, and graph neural networks. His work appears at the CVPR Workshop on Safe and
-Trustworthy Foundation Models and HealthAI 2026, with a further body of clinical-AI and
-LLM-safety papers under review.
+uncertainty, and graph neural networks. His work has been accepted at NeurIPS 2026,
+the Workshop on Synthetic & Adversarial ForEnsics (SAFE@CVPR 2026), ETRI Journal, and
+HealthAI 2026, with additional manuscripts under review.
 
 ## One-page bio
 
@@ -56,12 +56,12 @@ conviction shows up in the two research directions I run in parallel.
 
 On the **safety** side, I work on stopping generative models from producing harm while
 keeping them fully useful for everyone else. My flagship project **EBSG** (Example-Based
-Spatial Guidance, under review at **NeurIPS 2026**, with Jinwoo Shin and Juho Lee) is a
+Spatial Guidance, accepted at **NeurIPS 2026**, with Jinwoo Shin and Juho Lee) is a
 *training-free* method that uses editable exemplar packs to decompose a broad unsafe
 category into specific sub-concepts and steer against each with localized signals —
 reaching state-of-the-art erasure across nudity, I2P, and MJA benchmarks, supporting
 multi-concept removal, and transferring to a modern backbone (SD3). It grew out of
-**ASCG** (accepted to the CVPR Workshop on Safe and Trustworthy Foundation Models), which
+**ASCG** (accepted to the Workshop on Synthetic & Adversarial ForEnsics (SAFE@CVPR 2026)), which
 gates classifier guidance on Grad-CAM evidence (on Stable Diffusion 1.4, evaluated across
 three adversarial nudity benchmarks). Both
 introduce a **VLM-based** safety-vs-fidelity evaluation that goes beyond binary detectors.
@@ -96,7 +96,7 @@ These are the recurring "who I am" threads to draw on when writing 자소서 / s
   rigorous method to a messy real problem. *Evidence:* IE + CS double major feeding an AI
   research career; clinical +
   generative-safety portfolio.
-- **High-volume, rigorous execution.** A large, evidence-backed body of work (5 papers + 5
+- **High-volume, rigorous execution.** A large, evidence-backed body of work (6 papers + 5
   conference presentations spanning diffusion safety, LLM safety auditing, and clinical AI)
   produced alongside coursework, teaching, and national R&D projects. *Evidence:*
   publication list; *Summa Cum Laude*; 4 semesters of physics tutoring.
@@ -105,5 +105,5 @@ These are the recurring "who I am" threads to draw on when writing 자소서 / s
 
 > **✍️ needs your voice.** The strongest 자소서 lines come from *specific moments* — the
 > first time a model's overconfidence scared you, why safety over capability, a failure
-> you learned from. See [Values & Motivation]({{ '/wiki/values/' \| relative_url }}) for the
+> you learned from. See [Values & Motivation]({{ '/wiki/values/' | relative_url }}) for the
 > prompts to fill these in.
