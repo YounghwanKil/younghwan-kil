@@ -39,16 +39,12 @@ contributing to model development, experiments, and paper writing.
 
 ## National R&D projects
 
-Participating researcher on six IITP / NRF projects:
+Participating researcher on two IITP / NRF projects:
 
 | Project / English description | Funder / grant no. |
 |-------------------------------|--------------------|
 | AI Trustworthiness | NRF, Convergence Research Center (CRC) · RS-2022-NR070855 |
 | **AI-DEP** — Ethics-adaptive AI technology that evolves with strengthening policy requirements | IITP · RS-2022-II220184 |
-| AI Core Algorithms Research | IITP, Computing Core Technology · RS-2024-00509279 |
-| Meta-Learning for Real-World Problem Applications | IITP · RS-2022-II220713 |
-| Multimodal Data for Anxiety Disorder Analysis | NRF, Brain Disease Recovery · RS-2021-NR056917 |
-| AI Graduate School Program, KAIST | IITP · RS-2019-II190075 |
 
 *AI-DEP is part of an IITP human-centered AI core-technology program
 (2022.04–2026.12); its broadcast track builds a Korean broadcast-script fairness/safety
