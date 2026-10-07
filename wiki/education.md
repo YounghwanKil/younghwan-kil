@@ -35,7 +35,7 @@ contributing to model development, experiments, and paper writing.
 | GPA 4.00 / 4.30 | Cumulative, across the B.S. |
 | Merit scholarship ×4 | 2020-I, 2020-II, 2022-II, 2023-II |
 | Physics tutor ×4 semesters | General Physics I & II |
-| KAIRI intern (1st-choice admit) | Winter-2023 cohort, KAIST AI |
+| KAIRI intern | Winter-2023 cohort, KAIST AI |
 
 ## National R&D projects
 
