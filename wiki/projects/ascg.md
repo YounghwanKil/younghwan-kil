@@ -14,7 +14,7 @@ permalink: /wiki/projects/ascg/
 > **Authors:** Younghwan Kil, Joonhyeong Park, Giung Nam, Juho Lee†.
 > **Stack:** Python · PyTorch · diffusers · Grad-CAM · Stable Diffusion 1.4 · Qwen3-VL (evaluation).
 
-[OpenReview](https://openreview.net/forum?id=S9HxdLOgqt) · [SAFE@CVPR](https://www.safeworkshop.org/cvpr-2026/)
+[PDF]({{ '/assets/papers/ascg-cvpr-2026-camera-ready.pdf' | relative_url }}) · [SAFE@CVPR](https://www.safeworkshop.org/cvpr-2026/)
 
 - TOC
 {:toc}

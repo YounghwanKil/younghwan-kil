@@ -35,8 +35,8 @@
   venue: Second Edition of Workshop on Synthetic & Adversarial ForEnsics
   venue_short: SAFE@CVPR 2026
   links:
-    - label: OpenReview
-      url: https://openreview.net/forum?id=S9HxdLOgqt
+    - label: PDF
+      url: /assets/papers/ascg-cvpr-2026-camera-ready.pdf
     - label: Workshop
       url: https://www.safeworkshop.org/cvpr-2026/
     - label: Project

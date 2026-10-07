@@ -441,7 +441,7 @@ class SiteTests(unittest.TestCase):
         for url in (
             'https://openreview.net/profile?id=~Younghwan_Kil1',
             'https://openreview.net/forum?id=kCWbL63oQy',
-            'https://openreview.net/forum?id=S9HxdLOgqt',
+            BASE + '/assets/papers/ascg-cvpr-2026-camera-ready.pdf',
             'https://doi.org/10.4218/etrij.2026-0180',
             'https://onlinelibrary.wiley.com/doi/epdf/10.4218/etrij.2026-0180',
             BASE + '/assets/papers/ebsg-neurips-2026-camera-ready.pdf',
@@ -458,7 +458,13 @@ class SiteTests(unittest.TestCase):
     def test_camera_ready_is_exact_verified_file(self):
         pdf = SITE / 'assets/papers/ebsg-neurips-2026-camera-ready.pdf'
         self.assertEqual(hashlib.sha256(pdf.read_bytes()).hexdigest(), '1f9355f8bdbadf1a6608d1a7486015f7eed89b57f34bfb16575b0a4b6e082914')
-        self.assertEqual([p.name for p in (SITE / 'assets/papers').glob('*.pdf')], [pdf.name])
+        ascg = SITE / 'assets/papers/ascg-cvpr-2026-camera-ready.pdf'
+        self.assertEqual(hashlib.sha256(ascg.read_bytes()).hexdigest(), '2209416e1b7ed69a57d08e33324cc388403eed1bcbce9d4270052f74078a4710')
+        self.assertEqual({p.name for p in (SITE / 'assets/papers').glob('*.pdf')}, {pdf.name, ascg.name})
+        for route in ('/', '/wiki/publications/', '/wiki/projects/ascg/'):
+            page = self.pages[route][1]
+            self.assertIn(BASE + '/assets/papers/ascg-cvpr-2026-camera-ready.pdf', page.links)
+            self.assertNotIn('https://openreview.net/forum?id=S9HxdLOgqt', page.links)
 
     def test_public_html_metadata_and_search_index_are_english_only(self):
         public_text_files = sorted(SITE.rglob('*.html')) + sorted(SITE.rglob('*.json'))
