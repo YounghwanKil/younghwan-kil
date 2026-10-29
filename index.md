@@ -61,7 +61,7 @@ permalink: /
   </div>
   <div class="education-highlights">
     <article>
-      <span class="timeline-list__date">2025-04 - present</span>
+      <span class="timeline-list__date">2026-04 - present</span>
       <h3>Haean Research Institute</h3>
     </article>
     <article>

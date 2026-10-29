@@ -28,7 +28,7 @@ permalink: /wiki/profile/
 
 ## Work experience
 
-- **Haean Research Institute** · 2025-04 - present.
+- **Haean Research Institute** · 2026-04 - present.
 - **AIRS Medical** · Medical AI Intern · September–December 2022.
 
 ## Research focus
