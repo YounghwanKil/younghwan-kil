@@ -431,8 +431,8 @@ class SiteTests(unittest.TestCase):
             page = self.pages[route][1]
             text = _normalized_text(page.text)
             self.assertIn('Haean Research Institute', text)
-            self.assertIn('2025-04 - present', text)
-            self.assertNotIn('April 2026–Present', text)
+            self.assertIn('2026-04 - present', text)
+            self.assertNotIn('2025-04 - present', text)
             self.assertIn('AIRS Medical', text)
             self.assertIn('Medical AI Intern', text)
         self.assertIn('September–December 2022', _normalized_text(self.home.text))
